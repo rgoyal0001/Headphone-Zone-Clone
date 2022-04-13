@@ -6,9 +6,15 @@
     align-items: center;
 }
 #container>div{
-    /* border: 2px solid red; */
+    display: flex;
+    justify-content: center;
+    border: 2px solid red;
     box-sizing: border-box;
     margin: 50px auto 50px auto;
+    border: 0px;
+    padding: 10px;
+    /* width: 100%; */
+    
 }
 #container>#bodySignUp>div{
     display: flex;

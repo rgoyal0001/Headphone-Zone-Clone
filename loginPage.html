@@ -26,9 +26,9 @@
                         <a href="https://api.twitter.com/oauth/authorize?oauth_token=f3-vuAAAAAAA2tl0AAABgB76Akg"><h3> Twitter</h3></a>
                     </div>
                 </div>
-                <h4>LOGIN WITH SOCIAL OR</h4>
+                <h4>--------------------LOGIN WITH SOCIAL OR--------------------</h4>
                 <p style="margin-bottom:40px">Please enter your e-mail and password:</p>
-                <form action=""id="signUpDetailsForm">
+                <form action=""id="loginDetailsForm">
                     <input type="email" id="userEmail" placeholder="E-mail">
                     <input type="password" id="userpassword" placeholder="Password">
                     <input type="submit" id="submitButton" value="LOGIN">
@@ -63,7 +63,11 @@
                 </div>
                 <div id="fakes">
                     <h4>BEWARE OF FAKES</h4>
-                    <p>Don't get fooled. Look out for smuggled & <br>refurbished headphones while shopping <br>online. Headphone Zone is a <br>professionally run business & deals only <br>in 100% genuine headphones.</p>
+                    <p>Don't get fooled. Look out for smuggled & 
+                        <br>refurbished headphones while shopping 
+                        <br>online. Headphone Zone is a 
+                        <br>professionally run business & deals only 
+                        <br>in 100% genuine headphones.</p>
                     <p><a href="">Learn more</a></p>
                 </div>
                 <div id="followUs">
@@ -97,4 +101,34 @@
         </div>
     </div>
 </body>
+<script>
+    document.querySelector("#loginDetailsForm").addEventListener("submit",loginValidation);
+    var userData=JSON.parse(localStorage.getItem("headPhoneuserData")) || [];
+
+
+    function loginValidation(){
+        event.preventDefault();
+        var userEmail=document.querySelector("#userEmail").value;
+        var userPassword=document.querySelector("#userpassword").value;
+
+        if(userData.length==0){
+            alert("Please Register first");
+            window.location.href="./signUpPage.html";
+        }else if(userEmail==='' || userPassword===''){
+            alert("Please eneter valid details");
+        }else{
+            userData.forEach(userDetails => {
+                if(userDetails.email===userEmail && userDetails.password===userPassword){
+                    alert("loin successful");
+                    document.location.href="signUpPage.html";
+                }                
+            });
+        }
+        alert("Please eneter valid details/register first")
+    }
+
+
+
+
+</script>
 </html>

@@ -26,7 +26,7 @@
                         <a href="https://api.twitter.com/oauth/authorize?oauth_token=f3-vuAAAAAAA2tl0AAABgB76Akg"><h3> Twitter</h3></a>
                     </div>
                 </div>
-                <h4>LOGIN WITH SOCIAL OR</h4>
+                <h4>--------------------LOGIN WITH SOCIAL OR--------------------</h4>
                 <p style="margin-bottom:40px">Please fill the fields below:</p>
                 <form action=""id="signUpDetailsForm">
                     <input type="text" id="firstName" placeholder="First name">
@@ -35,7 +35,7 @@
                     <input type="password" id="userpassword" placeholder="Password">
                     <input type="submit" id="submitButton" value="CREATE ACCOUNT">
                 </form>
-                <p>Already have an account? <a href="./loginPage.html" style="text-decoration: none;">Login</a></p>
+                <p>Already have an account? <a href="./loginPage.html" style="color: grey;">Login</a></p>
             </div>            
         </div>
         <div id="bottomPage">
@@ -65,7 +65,11 @@
                 </div>
                 <div id="fakes">
                     <h4>BEWARE OF FAKES</h4>
-                    <p>Don't get fooled. Look out for smuggled & <br>refurbished headphones while shopping <br>online. Headphone Zone is a <br>professionally run business & deals only <br>in 100% genuine headphones.</p>
+                    <p>Don't get fooled. Look out for smuggled & 
+                        <br>refurbished headphones while shopping 
+                        <br>online. Headphone Zone is a 
+                        <br>professionally run business & deals only 
+                        <br>in 100% genuine headphones.</p>
                     <p><a href="">Learn more</a></p>
                 </div>
                 <div id="followUs">
@@ -99,4 +103,38 @@
         </div>
     </div>
 </body>
+<script>
+    document.addEventListener("submit",userDataCollection);
+    var userData=JSON.parse(localStorage.getItem("headPhoneuserData")) || [];
+
+
+    function userDataCollection(){
+        event.preventDefault();
+        var userDataObj={
+            firstName:'',
+            lastName:'',
+            email:'',
+            password:'',
+        }
+        var userFirstName=document.querySelector("#firstName").value;
+        var userLastName=document.querySelector("#lastName").value;
+        var userEmail=document.querySelector("#userEmail").value;
+        var userPassword=document.querySelector("#userpassword").value;
+
+        if(userFirstName==='' ||userEmail==='' || userPassword===''){
+            alert("Please eneter valid details")
+        }else{
+            userDataObj.firstName=userFirstName;
+            userDataObj.lastName=userLastName;
+            userDataObj.email=userEmail;
+            userDataObj.password=userPassword;
+            userData.push(userDataObj);
+            console.log(userData)
+            localStorage.setItem("headPhoneuserData",JSON.stringify(userData))
+            alert("User registaration sucesfull please login");
+            window.location.href="./loginPage.html"
+        }
+
+    }
+</script>
 </html>
