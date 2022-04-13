@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #container{
+            display: grid;
+            grid-template-columns: repeat(4,1fr);
+            gap:20px;
+        }
+        @media  all and (min-width:80px) and (max-width:400px) {
+            #container{
+                grid-template-columns: repeat(1,1fr);
+            }
+        }
+        
+    </style>
+</head>
+     <body>
+        <button>
+            <a href="mycart.html">cart</a>
+        </button>
+       <h1>Mens</h1>
+       <input type="text" placeholder="search" id="searchinput">
+       <div>
+           <h1>FILTER</h1>
+        <button id="lessthan900">less than 900</button>
+        <button id="lessthan1200">less than 1200</button>
+       </div>
+       <div>
+          
+           <select id="SortInput">
+               <option value="none">None</option>
+               <option value="lowtohigh">low to high</option>
+               <option value="hightolow">high to low</option>
+           </select>
+       </div>
+       <div id="container">
+
+        </div>
+        
+        <script>
+        
+            var mensdata=[
+                {
+                    imge_url:"https://via.placeholder.com/300",
+                    name:"Reebok Shoes",
+                    price:"1111",
+                    strikeprice:"223522",
+                },
+                {
+                    imge_url:"https://via.placeholder.com/300",
+                    name:"Reebok Shoes",
+                    price:"11565",
+                    strikeprice:"222",
+                },
+                {
+                    imge_url:"https://via.placeholder.com/300",
+                    name:"Reebok Shoes",
+                    price:"111565461",
+                    strikeprice:"225662",
+                },
+                {
+                    imge_url:"https://via.placeholder.com/300",
+                    name:"Reebok Shoes",
+                    price:"11656511",
+                    strikeprice:"226562",
+                },
+                {
+                    imge_url:"https://via.placeholder.com/300",
+                    name:"Reebok Shoes",
+                    price:"1111",
+                    strikeprice:"265622",
+                },
+                {
+                    imge_url:"https://via.placeholder.com/300",
+                    name:"Reebok Shoes",
+                    price:"1111",
+                    strikeprice:"256562",
+                },
+                {
+                    imge_url:"https://via.placeholder.com/300",
+                    name:"Reebok Shoes",
+                    price:"1111",
+                    strikeprice:"2222",
+                },
+                {
+                    imge_url:"https://via.placeholder.com/300",
+                    name:"Reebok Shoes",
+                    price:"1111",
+                    strikeprice:"2222",
+                },
+                {
+                    imge_url:"https://via.placeholder.com/300",
+                    name:"Reebok Shoes",
+                    price:"1111",
+                    strikeprice:"2222",
+                },
+                {
+                    imge_url:"https://via.placeholder.com/300",
+                    name:"Reebok Shoes",
+                    price:"1111",
+                    strikeprice:"2222",
+                },
+            ];
+             var filterdata=JSON.parse(JSON.stringify(mensdata))
+            var cartdata;
+            if(localStorage.getItem("cartdata")===null){
+                cartdata=[]
+            }else{
+                cartdata=JSON.parse(localStorage.getItem("cartdata"))
+            }
+          document.querySelector("#SortInput").addEventListener("change",function(){
+            var SortType=document.querySelector("#SortInput").value;
+            if(SortType==='none'){
+                displaydata(mensdata)
+            }else{
+
+            
+           filterdata.sort(function(a,b){
+               
+                if(SortType=="lowtohigh"){
+                    return a.price-b.price;
+                }
+                return b.price-a.price
+            });
+        
+         displaydata(filterdata)
+          }
+          });
+        
+        
+          function displaydata(mensdata){
+              document.querySelector("#container").innerHTML= '';
+          mensdata.forEach(function(mendata){
+      
+            var box=document.createElement("div");
+            box.setAttribute("class","box")  // box
+            var img=document.createElement("img");   // img inside box
+            img.src=mendata.imge_url
+            var name=document.createElement("p");     // name inside box
+            name.textContent=mendata.name;
+            var price=document.createElement("p");    // price inside box
+            price.innerText=mendata.price;
+            var cartbutton=document.createElement("button");
+            cartbutton.innerText="Add to cart";
+            cartbutton.addEventListener("click",function(){
+                addtocart(mendata)
+            })
+            box.append(img,name,price,cartbutton);
+            document.querySelector("#container").append(box);
+
+    }) 
+}
+displaydata(mensdata);
+     function filterlessthan900(mensdata){
+        var newdata=mensdata.filter(function(productitem){
+            if(productitem.price<=900){
+                return true;
+            }else{
+                return false;
+            }
+        })
+        return newdata;
+     }     
+     function filterlessthan1200(mensdata){
+        var newdata=mensdata.filter(function(productitem){
+            if(productitem.price<=1200){
+                return true;
+            }else{
+                return false;
+            }
+        })
+        return newdata;
+     }
+     document.querySelector("#lessthan900").addEventListener('click',function(){
+        var data=filterlessthan900(mensdata);
+        displaydata(data)
+     })
+     document.querySelector("#lessthan1200").addEventListener('click',function(){
+        var data=filterlessthan1200(mensdata);
+        displaydata(data)
+     })
+     </script>
+
+</body>
+</html>
+</body>
+</html>
