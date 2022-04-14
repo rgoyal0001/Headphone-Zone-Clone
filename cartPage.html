@@ -42,8 +42,9 @@
     </div>    
 </body>
 <script>
-    window.addEventListener("load",totalAmount)
-    window.addEventListener("load",productbar)
+    window.addEventListener("load",totalAmount);
+    window.addEventListener("load",productbar);
+    document.querySelector("#checkoutButtone").addEventListener("click",checkoutfunction)
 
     var cartArr=JSON.parse(localStorage.getItem("headphoneCartItems")) || [];
 
@@ -71,6 +72,10 @@
         originalPrice:"30",
         quantity:"1",
     }]
+
+
+    
+
     function productbar(){
         var total=0
         if(cartArr.length==0){
@@ -165,15 +170,23 @@
 
     }
 
-    function plusFunction(cartArr){
+    function plusFunction(cartArr,tot){
         localStorage.setItem("headphoneCartItems",JSON.stringify(cartArr));
         document.querySelector("#productsBody").innerHTML="";  
+
         productbar()
     }
+    function checkoutfunction(){
+        window.location.href="checkOutInformationPage.html" ;            
+    }
+    function totalUpdate(tot){
+        localStorage.setItem("headphoneCheckOutTotal",tot);
+    }
 
-    function totalAmount(total){
-              
-        document.querySelector("#totalTag").innerText=total;        
+    function totalAmount(total){              
+        document.querySelector("#totalTag").innerText=total; 
+        totalUpdate(total); 
+
     }
 </script>
 </html>
