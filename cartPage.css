@@ -28,7 +28,7 @@
 }
 #productDetails{
     width: 60%;
-    padding-top: 200px;
+    padding-top: 100px;
     padding-left: 50px;
     padding-right: 30px;
     
@@ -113,11 +113,18 @@
     border-radius: 20px;
     font-size: x-large;
 }
+#removeButton{
+    border: 0px solid red;
+    background-color: white;
+    padding: 0px;
+    width: 90px;
+}
 
 @media all and (min-width: 400px)and (max-width: 700px){
     #container{
         flex-direction: column;
         justify-content: center;
         align-items: center;
+        
     }    
 }

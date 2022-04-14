@@ -11,21 +11,104 @@
         </div>
         <div id="cartDetails">
             <div id="products">
-                asss
+                
             </div>
             <div id="promoCode">
                 <form action="" id="promoForm">
-                    <input type="text" placeholder="Gift card or Dicount code"id="inputPromo" style="border-radius:2px; height: 20px;">
-                    <input type="submit" value="Apply" id="applybutton">
+                    <input type="text" placeholder="Gift card or Dicount code"id="inputPromo" style="border-radius:2px; height: 20px;height: 40px;">
+                    <input type="submit" value="Apply" id="applybutton" style="color:white;border-radius: 10px;background-color: rgb(237, 231, 231);width: 80px; height: 50px; font-size: large;">
                 </form>
             </div>
             <div id="amountDetails">
-                aasas
+                <div>
+                    <p>Subtotal</p>
+                <p id="subTootalTag"></p>
+                </div>
+                <div>
+                    <p>Shipping</p>
+                    <p>Free</p>
+                </div>
             </div>
             <div id="totalDetails">
-                assaa
+                <p> Total</p>
+                <p id="totalTag"></p>
             </div>
         </div>
     </div>    
 </body>
+<script>
+    window.addEventListener("load",checkOutPageCreator)
+
+    var cartArr=JSON.parse(localStorage.getItem("headphoneCartItems")) || [];   
+    var total=localStorage.getItem("headphoneCheckOutTotal");
+    var productsDiv=document.querySelector("#products");
+
+    if(cartArr.length==1){       
+        productsDiv.setAttribute("style","height:77px");
+    }else if(cartArr.length==2){
+        productsDiv.setAttribute("style","height:154px");
+    }else{
+        productsDiv.setAttribute("style","height:235px");
+    }
+
+    function checkOutPageCreator(){
+        subtotalTag();
+        totalTag();
+        productsWindow();
+    }
+
+    function subtotalTag(){
+        var subTag=document.querySelector("#subTootalTag");
+        subTag.innerText=total;
+    }
+
+    function totalTag(){
+        var totTag=document.querySelector("#totalTag");
+        totTag.innerText=total;
+    }
+
+    function productsWindow(){
+        cartArr.forEach(element => {
+            var product=document.createElement("div");
+            product.setAttribute("class","product");
+            
+            var imageDiv=document.createElement("div");
+            imageDiv.setAttribute("class","imageDiv");
+            var imageUrllink=element.imageUrl;
+            var imageElement=document.createElement("img");
+            imageElement.setAttribute("class","image");
+            imageElement.src=imageUrllink;
+            var qntElement=document.createElement("div");
+            qntElement.setAttribute("class","qntOnImage");
+            qntElement.innerText=element.quantity;
+            console.log(qntElement)
+            imageDiv.append(imageElement,qntElement);
+            
+
+
+            var detailsDiv=document.createElement("div");
+            detailsDiv.setAttribute("class","detailsDiv");
+            var nameElement=document.createElement("h5");
+            nameElement.setAttribute("class","nameElement");
+            nameElement.innerText=element.productName;
+            var colorElement=document.createElement("p");
+            colorElement.setAttribute("class","colorElement");
+            colorElement.innerText=element. productColor;
+            detailsDiv.append(nameElement,colorElement);
+
+            var priceDiv=document.createElement("div");
+            priceDiv.setAttribute("class", "priceDiv");
+            var price=((parseInt(element.discountPrice))*(parseInt(element.quantity)));
+            var priceElement=document.createElement("h5");
+            priceElement.setAttribute("class","priceElement");
+            priceElement.innerText="₹"+price+".00";
+            priceDiv.append(priceElement);
+
+            product.append(imageDiv,detailsDiv,priceDiv);
+            
+            document.querySelector("#products").append(product);
+        });
+    }
+
+</script>
 </html>
