@@ -1,3 +1,12 @@
+*{
+    padding: 0;
+    margin: 0;
+    font-family:  Roboto, sans-serif;
+    /* background-color: black; */
+}
+
+
+
 
 img{
     width: 100%;
@@ -81,6 +90,7 @@ h5{
 span{
     text-align: center;
 }
+
 .newLaunchesImg{
     display: grid;
     grid-template-columns: repeat(3,1fr);

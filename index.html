@@ -6,15 +6,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>index</title>
     <link rel="stylesheet" href="index.css">
+    <link rel="stylesheet" href="./navbar/navbar.css">
 </head>
 <body>
     <div>
         <div id="navi">
-
+            
         </div>
-        <div id="page">
-            <img src="" alt="">
-        </div>
+        
         <div>
             <h2>START YOUR AUDIOPHILE JOURNEY HERE</h2>
         </div>
@@ -235,4 +234,10 @@
         </div>
     </div>
 </body>
+<script type="module">
+    import {nav} from "./navbar.js"
+    var navi=document.getElementById("navi")
+    navi.innerHTML=nav()
+</script>
+<script src="./navbar/nav_compt.js"></script>
 </html>
