@@ -1,0 +1,198 @@
+
+img{
+    width: 100%;
+    height: 80%;
+}
+h2{
+    font-size: 30px;
+    text-align: center;
+}
+#homeAudioImg > div{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    /* border: 1px solid red; */
+    height: 200px;
+    font-size: 10px;
+    color: brown;
+    padding: auto;
+    margin: auto;
+    margin-bottom: 10px;
+}
+#homeAudioImg{
+    display: grid;
+    grid-template-columns: repeat(9,1fr);
+    grid-template-rows: repeat(2,auto);
+    gap: 5px;
+    margin: auto;
+    width: 90%;
+}
+div > a{
+    text-decoration: none;
+    color: black;
+}
+@media all and (min-width: 64px) and (max-width: 740px) {
+    #homeAudioImg {
+        grid-template-columns: repeat(3, 1fr);
+    }
+    .newLaunchesImg{
+        grid-template-columns: repeat(1, 1fr);
+    }
+    #afterVideo{
+        grid-template-columns: repeat(1, 1fr);
+
+    }
+}
+#note{
+    display: block;
+    margin: auto;
+    display: 1px solid red;
+    width: 80%;
+}
+#note > p{
+    text-align: center;
+}
+p{
+    margin: 1px;
+}
+
+#afterVideo{
+    display: grid;
+    grid-template-columns: repeat(2,1fr);
+    margin: auto;
+    margin-top: 50px;
+    justify-content: center;
+    align-items: center;
+    background-color: rgb(205, 205, 205);
+    width: 95%;
+    height:800px;
+}
+#afterVideo > div{
+    margin-left: +50px;
+}
+#afterVideo > div + div{
+    text-align: left;
+    margin-right: +160px;
+}
+
+h5{
+    text-align: left;
+}
+span{
+    text-align: center;
+}
+.newLaunchesImg{
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+    width: 95%;
+    gap: 50px;
+    margin:50px auto 50px auto;
+}
+
+.textOnImg{
+
+    position: relative;
+    text-align: center;
+}
+.textOnImg div > img{
+    
+
+    border-radius: 10px;
+    width: 100%;
+}
+#text-block{
+    display: block;
+    position: absolute;
+    top:50%;
+    left: 50%;
+    width: 80%;
+    padding: none;
+    transform: translate(-50%,-50%);
+    color: white;
+}
+.headphoneFinder{
+    display: grid;
+    grid-template-columns: repeat(2,1fr);
+    margin: auto;
+    margin-top: 50px;
+    margin-bottom:50px;
+    width: 95%;
+}
+#back{
+    height: 90%;
+    margin-right: 20%;
+    background-color: rgb(205, 205, 205);
+}
+#back > div{
+    height: 100%;
+}
+#back >div >img{
+    border-radius: 7px;
+    height: 90%;
+    margin-left: 20%;
+    width: 100%;
+}
+.headphoneFinder > div{
+    display: block;
+    justify-content: center;
+    padding-top: 10%;
+}
+#finderText{
+    width: 72%;
+    display: flex;
+    flex-direction: column;
+    align-items: left;
+    margin: auto;
+}
+#finderText h2{
+    text-align: left;
+    margin: 0px;
+
+}
+#finderText p{
+    margin-top: 30px;
+}
+
+button{
+    width: 28%;
+    margin-top: 30px;
+    margin-left: 20px;
+    cursor: pointer;
+    border-radius: 20px;
+    background-color: blue;
+    color: white;
+    text-align: center;
+    padding: 15px 20px 15px 20px;
+    border:none;
+    font-family:Verdana, Geneva, Tahoma, sans-serif;
+    font-size: 10px;
+}
+.companies{
+    background-color: rgb(205, 205, 205);
+    padding: 30px;
+    margin-top: 90px;
+
+}
+.companies > div{
+    text-align: center;
+    margin: 50px;
+}
+#companyLogo{
+    display: grid;
+    grid-template-columns: repeat(8,1fr);
+    margin: auto;
+    gap: 50px;
+    margin-top: 50px;
+    width: 100%;
+}
+#seeAll{
+    background-color: white;
+    color: black;
+    font-weight: 800;
+    width: auto;    
+    padding: 20px 40px 20px 40px;
+}
+#seeAll:hover {
+    background-color:rgb(205, 205, 205);
+    transition: 0.7s;
+}
