@@ -7,7 +7,63 @@
 <body>
     <div id="container">
         <div id="adressDetails">
-
+            <div>
+                <div id="logoDiv">
+                    <img src="https://cdn.shopify.com/s/files/1/0153/8863/files/LOGO_b858cb3f-4fc8-4b60-9a75-e863e311bcc4.png?118257" alt="logo">
+                </div>
+                <div id="pageNavigator">
+                    <p><a href="./cartPage.html">Cart</a>><a href="./checkOutInformationPage.html">Information</a>><a href="./paymentPage.html">payment</a></p>
+                </div>
+                <div id="contactinformation">
+                    <h3>Contact Information</h3><p style="color:grey">Alredy have an account? <a href="./loginPage.html" style="color:grey;text-decoration:none"> Log in</a></p>
+                </div>
+                <div>
+                    <div style="border: 2px solid grey; border-radius: 5px;">
+                        <p style="margin:0px">Email</p>
+                        <input type="email" style="border: 0px solid grey; width:99%" id="emailEntry">
+                    </div >
+                    <div id="offersCheckBox"><input type="checkbox"><p>Email me with news and offers</p></div>
+                </div>
+                <div id="gstDiv">
+                    <div id="gstDiv1">
+                        <h2>GST details:</h2><p>Is your organisation registred under GST ACT in india ?</p>
+                    </div>
+                    <div id="gstDiv2">
+                        <div> <input type="checkbox"><p>Yes, registred under GST ACT</p></div>
+                        <div><input type="checkbox"><p>No, not registred under GST ACT.</p></div>                    
+                        
+                    </div>
+                    <div id="gstDiv3">
+                        <p>Please enter your GST number now. Once order has been placed, no modifications can be made to 
+                        <br>add your GST number to the invoice</p>
+                    </div>
+                </div>
+                <div id="formDiv">
+                    <h2>Shipping adress</h2>
+                    <form action=""id="adress">
+                        <input type="text" placeholder="Country/region" id="countryName">
+                        <div id="formNameDiv">
+                            <input type="text" placeholder="first name" id="firstName">
+                            <input type="text" placeholder="last name" id="lastName">
+                        </div>
+                        <input type="text" placeholder="Adress" id="adress">
+                        <div id="adressPlaceDiv">
+                            <input type="text" placeholder="City" id="city">
+                            <input type="text" placeholder="State" id="state">
+                            <input type="number" placeholder="PIN CODE" id="pinCode">
+                        </div>
+                        <input type="number" placeholder="Phone" id="phoneNo">
+                        <div id="checkOutBoxDiv">
+                            <input type="checkbox"> <p>Save this information for next time</p>
+                        </div>
+                        <div id="submitDiv">
+                            <input type="submit" value="Continue to payment method" id="submitButton">
+                        </div>
+                    </form>
+                </div>
+                <div><h4>Cash on Delivery is Currently not availble to ensure COVID-19 safety protocals.</h2></div>
+                <div id="footer"> <a href="">Refund policy</a> <a href="">Privacy Policy </a> <a href="">Terms of service</a></div>
+            </div>
         </div>
         <div id="cartDetails">
             <div id="products">
@@ -109,6 +165,15 @@
             document.querySelector("#products").append(product);
         });
     }
+   document.querySelector("#adress").addEventListener("submit",paymentPageNavigator);
+
+
+   function paymentPageNavigator(){
+       event.preventDefault();
+       console.log(1)
+       window.location.href="./paymentPage.html";
+   }
 
 </script>
+
 </html>
