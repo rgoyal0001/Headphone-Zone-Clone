@@ -1,0 +1,35 @@
+#container>div{
+    /* width: 50%; */
+    border: 2px solid red;
+
+}
+#container{
+    display: flex;
+    
+}
+#cartDetails{
+    box-sizing: border-box;
+    padding-left: 100px;
+    padding-top: 100px;
+    padding-right: 200px;
+    background-color: rgb(215, 212, 212);
+    display: flex;
+    flex-direction: column;
+}
+#promoCode{
+    padding-top: 30px;
+    padding-bottom: 30px;
+    border-top: 3px solid rgb(174, 169, 169);
+    border-bottom: 3px solid rgb(174, 169, 169);
+}
+#amountDetails{
+    padding-top: 30px;
+    padding-bottom: 30px;
+    /* border-top: 3px solid rgb(174, 169, 169); */
+    border-bottom: 3px solid rgb(174, 169, 169);
+
+}
+#totalDetails{
+    padding-top: 30px;
+    bor
+}
