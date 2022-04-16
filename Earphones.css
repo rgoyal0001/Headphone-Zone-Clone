@@ -44,6 +44,19 @@
     align-items: center;
 
 }
+#text4{
+    position: absolute;
+    color: white;
+    margin: 1%;
+    margin-left: 2%;
+    display: flex;
+}
+#home{
+   color: grey;
+}
+h6{
+   padding: 5px;
+}
 
 #dashboard{
     width: 30%;
@@ -106,7 +119,7 @@
    border: 1px solid rgb(226, 226, 226);
    border-left: none;
    border-right: none;
-
+  
 }
 #dasbox {
     display: flex;
@@ -176,4 +189,14 @@
 }
 #dashboard_box +div{
  border-top: white;
+}
+
+ option{
+    padding: 5%;
+}
+#dummy{
+    
+    height: 70px;
+    width: 10px;
+    padding: -25px;
 }
