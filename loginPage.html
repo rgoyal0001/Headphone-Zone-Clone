@@ -83,6 +83,7 @@
         event.preventDefault();
         var userEmail=document.querySelector("#userEmail").value;
         var userPassword=document.querySelector("#userpassword").value;
+        var isLogedIn = false
 
         if(userData.length==0){
             alert("Please Register first");
@@ -92,6 +93,7 @@
         }else{
             userData.forEach(userDetails => {
                 if(userDetails.email===userEmail && userDetails.password===userPassword){
+<<<<<<< HEAD
                     alert("loin successful");
                     
                  
@@ -100,9 +102,20 @@
                 else{
                     alert("Please eneter valid details/register first");
                 }                
+=======
+                    alert("login successful");
+                    isLogedIn = true;                   
+                    return;
+                }              
+>>>>>>> 53bbf47f9d39a8b13f865e83784e1f55d5296fe4
             });
         }
-        // alert("Please eneter valid details/register first")
+        if(isLogedIn===true){    
+            document.location.href="signUpPage.html";        
+        } else{
+            alert("Please eneter valid details/register first")
+        }
+        
     }
 
 

@@ -102,7 +102,8 @@
                window.location.href="./loginpage"
            });
            var emptyCartDiv=document.createElement("div");
-           emptyCartDiv.append(emptyCart,emptyCartButton)
+           emptyCartDiv.setAttribute("id","emptyCartDiv");
+           emptyCartDiv.append(emptyCart,emptyCartButton);
            document.querySelector("#container").append(emptyCartDiv);
         }else{
             cartArr.forEach(function(element,i) {
@@ -143,7 +144,7 @@
             addButtonMinus.addEventListener("click",function(){
                 var qntyminus=parseInt(element.quantity);
                 qntyminus--;
-                if(qntyminus<1){
+                if(qntyminus<=0){
                     removeItemFromCartData(i);               
                 }else{
                     element.quantity=qntyminus;
@@ -167,7 +168,7 @@
             remove.addEventListener("click",function(){
                 alert("Item removed from the Cart");
                 removeItemFromCartData(i);  
-                productbar();                  
+                                
             })
 
 
@@ -214,8 +215,8 @@
     function removeItemFromCartData(index){
         cartArr.splice(index,1);
         localStorage.setItem("headphoneCartItems",JSON.stringify(cartArr));
-        // window.addEventListener("load",productbar) 
-        // console.log("hai")       
+        window.location.reload();
+        return;     
     }
 </script>
 </html>

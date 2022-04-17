@@ -61,6 +61,10 @@
 #followUs>div>div>a :hover{
     color: white;
 }
+#followUsDiv img{
+    width: 30px;
+    height:30px;
+}
 @media all and (min-width: 400px)and (max-width: 700px){
     #bottomPage>#contactUs{
         grid-template-columns: repeat(2,1fr);
