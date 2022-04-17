@@ -3,7 +3,7 @@
     grid-template-columns: repeat(3,1fr);
     gap:20px;
     width: 70%;
-  
+    
     margin-top: 80px;
     
 }
@@ -21,10 +21,11 @@
     width: 100%;
 }
 
+
 #text{
     position: absolute;
     top: 170px;
-    left: 500px;
+    left: 570px;
     color: white;
     font-size: 50px;
     width: 40%;
@@ -34,19 +35,8 @@
 }
 #text1{
     position: absolute;
-    top: 110px;
-    left: 530px;
-    color: white;
-    font-size: 50px;
-    width: 40%;
-   
-    align-items: center;
-
-}
-#text2{
-    position: absolute;
     top: 230px;
-    left: 490px;
+    left: 500px;
     color: white;
     font-size: 50px;
     width: 40%;
@@ -54,6 +44,20 @@
     align-items: center;
 
 }
+#text4{
+    position: absolute;
+    color: white;
+    margin: 1%;
+    margin-left: 2%;
+    display: flex;
+}
+#home{
+   color: grey;
+}
+h6{
+   padding: 5px;
+}
+
 #dashboard{
     width: 30%;
     
@@ -74,7 +78,7 @@
 }
 
 #container div{
-    
+   
     text-align: center ;
 }
 #container h3{
@@ -115,7 +119,7 @@
    border: 1px solid rgb(226, 226, 226);
    border-left: none;
    border-right: none;
-
+  
 }
 #dasbox {
     display: flex;
@@ -142,7 +146,7 @@
     
 }
 #dasbox #heading{
-    margin-right: 270px;
+    margin-right: 200px;
     width: 100%;
 }
 #dasbox #option{
@@ -160,8 +164,9 @@
 
 }
 #dasbox3 #heading{
-    margin-right: 270px;
+   margin-right: 200px;
     width: 100%;
+    
 }
 #dasbox3 #option{
     margin-top: 17px;
@@ -169,7 +174,7 @@
 
 }
 #dasbox4 #heading{
-    margin-right: 220px;
+    margin-right: 160px;
     width: 100%;
 }
 #dasbox4 #option{
@@ -186,3 +191,46 @@
 #dashboard_box +div{
  border-top: white;
 }
+
+ option{
+    padding: 5%;
+}
+#dummy{
+    
+    height: 70px;
+    width: 10px;
+    padding: -25px;
+}
+#selectitem{
+    width: 25px;
+
+}
+#slider{
+   background-color: gainsboro;
+    display: flex;
+}
+#slider div{
+    margin: auto;
+  
+
+}
+#slider div img{
+    height: 150px;
+    width: 150px;
+}
+.zo0m{
+    padding: 50px;
+    background-color: green;
+    transition: transform .2s;
+    width: 200px;
+    height: 200px;
+    margin: 0 auto;
+  }
+  .zoom:hover {
+    -ms-transform: scale(4); /* IE 9 */
+    -webkit-transform: scale(4); /* Safari 3-8 */
+    transform: scale(1.1); 
+  }
+ 
+
+
