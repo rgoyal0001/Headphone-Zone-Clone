@@ -14,15 +14,8 @@ body{
     background-color: rgb(215, 212, 212);
     display: flex;
     flex-direction: column;
-    width: 40%;
+    width: 50%;
     height: 100%;
-}
-#adressDetails{
-    width: 60%;
-    height: 100%;
-    padding-left: 120px;
-    padding-top: 70px;
-    padding-right: 100px;
 }
 #promoCode{
     padding-top: 30px;
@@ -30,14 +23,13 @@ body{
     border-top: 3px solid rgb(174, 169, 169);
     border-bottom: 3px solid rgb(174, 169, 169);
 }
-#promoCode>form{
+#promoCode>#promoForm{
     display: flex;
     justify-content: space-around;
 }
 #amountDetails{
     padding-top: 20px;
     padding-bottom: 20px;
-    /* border-top: 3px solid rgb(174, 169, 169); */
     border-bottom: 3px solid rgb(174, 169, 169);
 
 }
@@ -96,14 +88,43 @@ margin-top: 0px;
     background-color: grey;
     border-radius: 100%;
 }
-/* #adressDetails>div{
-    width: 500px;
-} */
 #pageNavigator a{
     text-decoration: none;
     color: grey;
 }
-#contactinformation{
+#CardDetails{
+    width: 50%;
+}
+#cardDetailsDiv{
+    box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+   width: 50%;
+   margin: 12%;
+   display: flex;
+   flex-direction: column;
+   padding: 10%;
+}
+#cardDetailsDiv>form{
     display: flex;
-    justify-content: space-between;
+    flex-direction: column;
+}
+#cardDetailsDiv>form input{
+    margin: 5px;
+    border-radius: 5px;
+    box-sizing: border-box;
+    padding: 5px;
+}
+#cardDetailsDiv>form>div>select{
+    margin: 5px;
+    border-radius: 5px;
+}
+#cardMonthYear{
+    display:grid;
+    grid-template-columns: repeat(3,33%);
+}
+#submitbutton{
+    border: 2px solid blue;
+    background-color: blue;
+    color: white;
+    font-size: large;
+    padding-top: 50px;
 }
