@@ -1,4 +1,8 @@
-// image slide for complanies QUOTES
+// // image slide for complanies QUOTES
+// document.querySelector('.earphone_img').addEventListener(mouseover,function{
+
+// })
+
 
 let slideIndex=1;
 showSlides(slideIndex);
@@ -27,3 +31,37 @@ function showSlides(n){
     slides[slideIndex-1].style.display="block";
     dots[slideIndex-1].className+=" active";
 }
+
+
+// for quote slide
+let quoteIndex=1;
+quoteSlide(quoteIndex);
+
+function plusSlides(n){
+    quoteSlide(quoteIndex += n);
+}
+function cSlide(q){
+    quoteSlide(quoteIndex=q);
+}
+
+function quoteSlide(q){
+    let i;
+    let quote=document.getElementsByClassName("quotes");
+    let dotes=document.getElementsByClassName("dot");
+    
+    if(q>quote.length){
+        quoteIndex=1;
+    }
+    if(q<1){
+        quoteIndex=quote.length;
+    }
+    for(i=0;i<quote.length;i++){
+        quote[i].style.display="none";
+    }
+    for(i=0;i<dotes.length;i++){
+        dotes[i].className=dotes[i].className.replace("active","");
+    }
+    quote[quoteIndex-1].style.display="block";
+    dotes[quoteIndex-1].className+=" active";
+}
+
