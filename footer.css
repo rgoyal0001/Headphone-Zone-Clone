@@ -1,19 +1,24 @@
 #bottomPage{
     display: flex;
     flex-direction: column;
-    justify-content: center;
+    /* justify-content: center; */
     align-items: center;
-    background-color:rgb(245, 240, 240);
+    background-color:rgb(255, 255, 255);
+    
+    height: auto;
+    margin-top: 50px;
 }
 #bottomPage>#contactUs{
     display: grid;
     grid-template-columns: repeat(5,1fr);
-    gap: 20px;
+    padding: 50px;
+    /* gap: 10px; */
     text-decoration: none;
 }
 #weAcceptPayment{
     display: flex;
     justify-content: space-around;
+    align-items: center;
 }
 #weAcceptPayment>img{
     width: 45px;
@@ -23,9 +28,13 @@
 }
 #adress{
     text-align: center;
+    margin-bottom: 30px;
+    font-size: 15px;
+    
 }
 #contactUs a ,p{
     text-decoration: none;
+    margin-top: 10px;
     color: black;
 }
 #followUs>div{
@@ -34,7 +43,7 @@
 #followUs>div>div{
     display: flex;
     padding: 15px;
-    border: 1px solid grey;
+    border: 1px solid rgb(226, 220, 220);
     width: 30px;
     height: 30px;
     justify-content: center;
@@ -44,6 +53,11 @@
 #followUs>div> :hover{
     background-color:grey;
 }
+#followUs img{
+    height: auto;
+    width: 30px;
+    background: none;
+}
 #followUs>div>div>a :hover{
     color: white;
 }
@@ -52,3 +66,5 @@
         grid-template-columns: repeat(2,1fr);
     }    
 }
+
+

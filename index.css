@@ -3,11 +3,64 @@
     margin: 0;
     font-family:  Roboto, sans-serif;
     /* background-color: black; */
+    width: auto;
 }
 
+#footer{
+    z-index: 1;
+    height: 200px;
+    color: gray;
+}
 
+#navi{
+    z-index: 1;
+}
+.firstSlide {
+    position: relative;
+    width: 100%;
+  }
+  .image {
+    display: block;
+    width: 100%;
+  }
+  
+  .overlay {
+    position: absolute;
+    bottom: 25%;
+    left: 0;
+    right: 20%;
+    overflow: hidden;
+    height: 0;
+    transition: .5s ease;
+  }
+  
+  .firstSlide:hover .overlay {
+    height: 100%;
+  }
+  .text{
+    display: flex;
+    flex-wrap: wrap;
+    width: 50%;
+    color: white;
+    position: absolute;
+    top: 70%;
+    left: 30%;
+    -webkit-transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+    text-align: center;
+  }
+.text1{
+    font-size: 60px;
+}
 
-
+.text3{
+    background-color: white;
+    color: black;
+    font-weight: 800;
+    width: auto;    
+    padding: 20px 30px 20px 30px;
+  }
 img{
     width: 100%;
     height: 80%;
@@ -16,6 +69,13 @@ h2{
     font-size: 30px;
     text-align: center;
 }
+#video, iframe{
+    margin-top: 50px;
+    width: 100%;
+    height: 1000px;
+    margin-bottom: 10vw;
+}
+
 #homeAudioImg > div{
     display: flex;
     flex-direction: column;
@@ -64,7 +124,9 @@ div > a{
 p{
     margin: 1px;
 }
-
+.video{
+    margin-top: 100px;
+}
 #afterVideo{
     display: grid;
     grid-template-columns: repeat(2,1fr);
@@ -100,7 +162,6 @@ span{
 }
 
 .textOnImg{
-
     position: relative;
     text-align: center;
 }
@@ -120,7 +181,7 @@ span{
     transform: translate(-50%,-50%);
     color: white;
 }
-.headphoneFinder{
+.headphoneFinder, .cityNearU{
     display: grid;
     grid-template-columns: repeat(2,1fr);
     margin: auto;
@@ -133,8 +194,22 @@ span{
     margin-right: 20%;
     background-color: rgb(205, 205, 205);
 }
+#mapBack{
+    height: 90%;
+    margin-right: 20%;
+    background-color: rgb(197, 167, 167);
+}
+#mapBack > div{
+    height: 100%;
+}
 #back > div{
     height: 100%;
+}
+#mapBack > div > img{
+    border-radius: 7px;
+    height: 90%;
+    margin-left: 20%;
+    width: 100%;
 }
 #back >div >img{
     border-radius: 7px;
@@ -142,12 +217,12 @@ span{
     margin-left: 20%;
     width: 100%;
 }
-.headphoneFinder > div{
+.headphoneFinder > div, .cityNearU > div{
     display: block;
     justify-content: center;
     padding-top: 10%;
 }
-#finderText{
+#finderText, #cityText{
     width: 72%;
     display: flex;
     flex-direction: column;
@@ -177,6 +252,9 @@ button{
     font-family:Verdana, Geneva, Tahoma, sans-serif;
     font-size: 10px;
 }
+#begin:hover{
+    background-color: rgb(14, 14, 182);
+}
 .companies{
     background-color: rgb(205, 205, 205);
     padding: 30px;
@@ -205,4 +283,122 @@ button{
 #seeAll:hover {
     background-color:rgb(205, 205, 205);
     transition: 0.7s;
+}
+
+#quotes{
+    width: 50%;
+    margin: auto;
+    text-align: left;
+    margin-top: 100px;
+}
+#lastQuote, #nextQuote{
+    width: auto;
+    background-color: rgb(184, 122, 40);
+    border-radius: 0;
+    margin: 0;
+    margin-top: 20px;
+}
+.channel_quotes{
+    position: relative;
+    width: 100%;
+    /* padding: 50px;
+    margin-top: 50px;
+    */
+}
+.bg{
+    margin-top: 50px;
+    display: block;
+    background-color: rgb(195, 213, 218);
+    width: 100%;
+    height: 300px;
+}
+/* .bate_slide{
+    display: none;
+    width: 60%;
+    margin: auto;
+    margin: 100px auto 100px auto;
+    text-align: left;
+} */
+.bate_slide{
+    position: absolute;
+    bottom: 45%;
+    left: 0;
+    right: 5%;
+    overflow: hidden;
+    height: 0;
+    transition: .5s ease;
+}
+.channel_quotes:hover .bate_slide{
+    height: 100%;
+}
+.bate_slide > div{
+    display: flex;
+    flex-wrap: wrap;
+    width: 50%;
+    position: absolute;
+    top: 80%;
+    left: 50%;
+    -webkit-transform: translate(-50%,-50%);
+    -ms-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+    text-align: center;
+}
+.cursor{
+    cursor: pointer;
+}
+.row::after{
+    content: "";
+    display: table;
+    clear: both;
+}
+.row{
+    background-color: rgb(195, 213, 218);
+    padding-bottom: 50px;
+    display: flex;
+    margin:auto;
+    justify-content: center;
+}
+.column{
+    float: left;
+    width: 16%;
+    margin: auto;
+    padding: 3% 4% 3% 4% ;
+    margin-left: 20px;
+}
+.demo{
+    opacity: 0.2;
+}
+.active, .demo{
+    opacity: 10;
+}
+.channel_logo{
+    width: 80%;
+    margin: auto;
+}
+.channel_logo img{
+    width: auto;
+}
+.column > img{
+    width: 100%;
+}
+
+.our_values{
+    display: block;
+    width: 100%;
+    height: auto;
+    margin-top: 4vw;
+    margin: auto;
+    padding-top: 3%;
+    padding-bottom: 3%;
+    text-align: center;
+    background-color: rgb(145, 145, 166);
+}
+.our_values > div{
+    display: flex;
+    height: auto;
+    justify-content: space-around;
+    margin-bottom: 3%;
+}
+.our_values > div > div{
+    width: 17%;
 }

@@ -1,9 +1,12 @@
-export function nav() {
+var nav=()=> {
     return `
 
 <div id="navbar">
  <div id="img">
+ <a href="index.html">
     <img src="./navbar/logo.png" alt="">
+
+    </a>
  </div>
  <div id="detaisd">
 
@@ -248,7 +251,7 @@ export function nav() {
         </div>
     </div>
     <div class="dropdown">
-        <a class="dropbtn">HelpCenter</a>
+        <a class="dropbtn" a href="#footer">HelpCenter</a>
         <div class="dropdown-content">
 
         </div>
@@ -257,29 +260,40 @@ export function nav() {
 
 
 
- </div>
- <div id="search">
-    <div id="searchitem">
-        <div id="mySidenav" class="sidenav">
-            <div id="se">
-                <input type="text" name="" id="search_item" placeholder="what are you looking for">
-                <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+    </div>
+    <div id="search">
+        <div id="searchitem">
+            <div id="mySidenav" class="sidenav">
+                <div id="se">
+                <input type="text" name="" id="search_item" onkeypress="searchitem()" placeholder="what are you looking for">
+                       
+                    <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+                </div>
+               
+                <hr>
+                <div id="pd">
+                    
+                </div>
+                <div id="search_itemdiv">
+                                       </div>
+                <div id="item_btn"></div>
             </div>
-            <hr>
 
+            <a onclick="opensearch()">Search</a>
         </div>
-
-        <a onclick="opensearch()">Search</a>
+        <a href="./loginPage.html" id="login_acc">Login</a>
+    <a href="">Cart</a>
+    <div id="cart">
+        0
     </div>
 
- 
- <a href="">Login</a>
- <a href="">Cart</a>
- <div id="cart">
-    0
- </div>
- </div>
-  </div>
+    </div>
+    
+</div>
+</div>
 `
 }
-// export default nav
+export default nav
+
+
+

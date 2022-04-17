@@ -13,8 +13,10 @@
     
     <div id="navbar">
         <div id="img">
-            <img src="logo.png" alt="">
-        </div>
+            <a href="../index.html">
+               <img src="./logo.png" alt="">
+            </a>
+            </div>
         <div id="detaisd">
 
 
@@ -272,33 +274,40 @@
             <div id="searchitem">
                 <div id="mySidenav" class="sidenav">
                     <div id="se">
-                        <input type="text" name="" id="search_item" placeholder="what are you looking for">
+                        <input type="text" name="" id="search_item" onkeypress="searchitem()" placeholder="what are you looking for">
                        
                         <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
                     </div>
-                     <button id="search_btn" onclick="searchitem()">Search</button>
+                     <!-- <button id="search_btn" onclick="searchitem()">Search</button> -->
                     <hr>
                     <div id="pd">
                         
                     </div>
                     <div id="search_itemdiv">
                                            </div>
-                    <div id="item"></div>
+                    <div id="item_btn">
+
+
+                    </div>
                 </div>
 
                 <a onclick="opensearch()">Search</a>
             </div>
-
-        </div>
-        <a href="">Login</a>
+            <a href="./loginPage.html" id="login_acc">Login</a>
         <a href="">Cart</a>
         <div id="cart">
             0
         </div>
+
+        </div>
+        
     </div>
     </div>
 
 </body>
+<script>
+    
+</script>
 <script src="nav_compt.js">
 
 </script>

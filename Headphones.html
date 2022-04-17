@@ -1,335 +1,374 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
-<body>
-   <!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Headphone</title>
+    <link rel="icon" type="image/x-icon" href="favicon (2).png">
     <link rel="stylesheet" href="Headphone.css">
+    <link rel="stylesheet" href="./navbar/navbar.css">
+    <link rel="stylesheet" href="footer.css"/>
 </head>
-     <body>
-        
-     
-     
-       <div id="imgsection">
-           <img src="https://cdn.shopify.com/s/files/1/0153/8863/collections/Meze_99_neo_1350x.jpg?v=1649765748" alt="">
-          
-            <h1 id="text1">BEGINNER</h1>
-            <h1 id="text">AUDIOPHILE  </h1>
-            <h1 id="text2">HEADPHONES </h1>
 
-        </div>
-        <div id="featured">
-            <p> Sort by Featured</p>
-            
-           <select id="SortInput">
-             <option value=""></option>
-             <option value="">Featured</option>
-             <option value="">Best Selling</option>
-             <option value="">Alphabetically, A-Z</option>
-             <option value="">Alphabetically, Z-A</option>
-             <option value="">Price, low to high</option>
-             <option value="">Price, high to low</option>
-             <option value="">Date, old to new</option>
-             <option value="">Date, new to old</option>
-            
-         </select>
+<body>
 
-        </div>
-        
-        <div id="main">
+    <div id="navi">
+            
+
+    </div>
+
+    <div id="imgsection">
+        <img src="https://cdn.shopify.com/s/files/1/0153/8863/collections/Meze_99_neo_1350x.jpg?v=1649765748" alt="">
+
+        <h1 id="text1">BEGINNER</h1>
+        <h1 id="text">AUDIOPHILE </h1>
+        <h1 id="text2">HEADPHONES </h1>
+
+    </div>
+    <div id="featured">
+        <p> Sort by Featured</p>
+
+        <select id="SortInput">
+            <option value=""></option>
+            <option value="">Featured</option>
+            <option value="">Best Selling</option>
+            <option value="">Alphabetically, A-Z</option>
+            <option value="">Alphabetically, Z-A</option>
+            <option value="">Price, low to high</option>
+            <option value="">Price, high to low</option>
+            <option value="">Date, old to new</option>
+            <option value="">Date, new to old</option>
+
+        </select>
+
+    </div>
+
+    <div id="main">
         <div id="dashboard">
-           <div id="Dashboard_box">
-                    <div id="head">
-                        <h3>FILTERS</h3>
-                    
-                    </div>
-           
+            <div id="Dashboard_box">
+                <div id="head">
+                    <h3>FILTERS</h3>
+
+                </div>
+
                 <div id="dasbox">
                     <div id="heading">
                         <h3>Brand</h3>
                     </div>
                     <div id="option">
-                        <select >
-                        
+                        <select>
+
                             <option value=""></option>
-                            </select>
+                        </select>
                     </div>
-                   
+
                 </div>
                 <div id="dasbox2">
                     <div id="heading">
                         <h3>Product type</h3>
                     </div>
                     <div id="option">
-                        <select >
-                        
+                        <select>
+
                             <option value=""></option>
-                            </select>
+                        </select>
                     </div>
-                   
+
                 </div>
                 <div id="dasbox3">
                     <div id="heading">
                         <h3>Price</h3>
                     </div>
                     <div id="option">
-                        <select >
-                        
+                        <select>
+
                             <option value=""></option>
-                            </select>
+                        </select>
                     </div>
-                   
+
                 </div>
                 <div id="dasbox4">
                     <div id="heading">
                         <h3>Availiability</h3>
                     </div>
                     <div id="option">
-                        <select >
-                        
+                        <select>
+
                             <option value=""></option>
-                            </select>
+                        </select>
                     </div>
-                   
+
                 </div>
-                
-           </div>
+
+            </div>
         </div>
-       <div id="container">
+        <div id="container">
 
         </div>
-        </div>
-        <script>
-        
-            var mensdata=[
-                {
-                    imge_url:"https://cdn.shopify.com/s/files/1/0153/8863/products/Headphone-Zone-Meze-99-Neo-1160-1160-2_400x.jpg?v=1591944478",
-                    name:"MEZE - 99 NEO",
-                    Dis:"Closed-Back Headphone",
-                    price1:"₹ 14,999",
-                    price2:"₹ 19,999",
-                    dummyimg:"",
-                },
-                {
-                    imge_url:"https://cdn.shopify.com/s/files/1/0153/8863/products/sennheiser-hd-569-headphone-zone-29093551111_400x.jpg?v=1579780219",
-                    name:"SENNHEISER - HD 569",
-                    Dis:"Semi Open-Back Headphone",
-                    price1:"₹ 12,990",
-                    price2:"₹ ",
-                    dummyimg:"",
-                },
-                {
-                    imge_url:"https://cdn.shopify.com/s/files/1/0153/8863/products/Headphone-Zone-Campfire-Audio-Honeydew-02_400x.jpg?v=1624099609",
-                    name:"HIFIMAN - HE400SE",
-                    Dis:"Planar Magnetic Open Backs",
-                    price1:"₹ 10,990",
-                    price2:"₹ ₹ 16,999 ",
-                    dummyimg:"",
-                },
-             
-              
-                {
-                    imge_url:"https://cdn.shopify.com/s/files/1/0153/8863/products/beyerdynamic-dt-770-pro-headphone-zone-13980464185407_400x.jpg?v=1579662488",
-                    name:"BEYERDYNAMIC - DT 770 PRO",
-                    Dis:"Closed-Back Studio Headphone",
-                    price1:"From ₹ 9,999",
-                    price2:"₹ 17,050",
-                    dummyimg:"C:\Users\Parteek Arora\OneDrive\Desktop\Construct week\Capture.PNG",
-                },
-                {
-                    imge_url:"https://cdn.shopify.com/s/files/1/0153/8863/products/Headphone-Zone-dt-990-pro-1160-1160-5_400x.jpg?v=1598946254",
-                    name:"BEYERDYNAMIC - DT 990 PRO",
-                    Dis:"Open-Back Studio Headphone",
-                    price1:"₹ 12,999",
-                    price2:"₹ 16,489",
-                    dummyimg:"C:\Users\Parteek Arora\OneDrive\Desktop\Construct week\Capture.PNG",
-                },
-                {
-                    imge_url:"https://cdn.shopify.com/s/files/1/0153/8863/products/Headphone-Zone-HiFiMAN-Sundara-1160-1160-2_400x.jpg?v=1592332661",
-                    name:"MEZE - 99 CLASSICS",
-                    Dis:"Closed-Back Headphone",
-                    price1:"₹ 26,999",
-                    price2:"₹ 30,999",
-                    dummyimg:"C:\Users\Parteek Arora\OneDrive\Desktop\Construct week\Capture.PNG",
-                },
-                {
-                    imge_url:"https://cdn.shopify.com/s/files/1/0153/8863/products/Headphone-Zone-HiFiMAN-Deva-Wired-1160-1160-6_400x.jpg?v=1596280148",
-                    name:"AUDIO-TECHNICA - ATH-M50X",
-                    Dis:"In-Ears With 1 DD + 1 BA Drivers",
-                    price1:"From ₹ 1,699",
-                    price2:"₹ 2,499",
-                    dummyimg:"C:\Users\Parteek Arora\OneDrive\Desktop\Construct week\Capture.PNG",
-                },
-                {
-                    imge_url:"https://cdn.shopify.com/s/files/1/0153/8863/products/Headphone-Zone-Audio-technica-m50x-1160-1160-Black_400x.jpg?v=1590592477",
-                    name:"HIFIMAN - DEVA (WIRED)",
-                    Dis:"In-Ears With 1 DD + 1 BA Drivers",
-                    price1:"From ₹ 1,699",
-                    price2:"₹ 2,499",
-                    dummyimg:"C:\Users\Parteek Arora\OneDrive\Desktop\Construct week\Capture.PNG",
-                },
-                {
-                    imge_url:"https://cdn.shopify.com/s/files/1/0153/8863/products/Headphone-Zone-grado-SR60x-01_400x.jpg?v=1648039536",
-                    name:"AUDIO-TECHNICA - ATH-R70X",
-                    Dis:"In-Ears With 1 DD + 1 BA Drivers",
-                    price1:"From ₹ 1,699",
-                    price2:"₹ 2,499",
-                    dummyimg:"C:\Users\Parteek Arora\OneDrive\Desktop\Construct week\Capture.PNG",
-                },
-                {
-                    imge_url:"https://cdn.shopify.com/s/files/1/0153/8863/products/Headphone-Zone-Grado-SR80x-02_400x.jpg?v=1647928592",
-                    name:"SHURE - SRH440",
-                    Dis:"In-Ears With 1 DD + 1 BA Drivers",
-                    price1:"From ₹ 1,699",
-                    price2:"₹ 2,499",
-                    dummyimg:"C:\Users\Parteek Arora\OneDrive\Desktop\Construct week\Capture.PNG",
-                },
-                {
-                    imge_url:"https://cdn.shopify.com/s/files/1/0153/8863/products/Headphone-Zone-Grado-SR125x-02_400x.jpg?v=1647947259",
-                    name:"KS - ZEN PRO X",
-                    Dis:"In-Ears With 1 DD + 1 BA Drivers",
-                    price1:"From ₹ 1,699",
-                    price2:"₹ 2,499",
-                    dummyimg:"C:\Users\Parteek Arora\OneDrive\Desktop\Construct week\Capture.PNG",
-                },
-                {
-                    imge_url:"https://cdn.shopify.com/s/files/1/0153/8863/products/Headphone-Zone-Grado-SR225x-1_400x.jpg?v=1647951107",
-                    NAME:"GRADO - SR60X",
-                    Dis:"In-Ears With 1 DD + 1 BA Drivers",
-                    price1:"From ₹ 1,699",
-                    price2:"₹ 2,499",
-                    dummyimg:"C:\Users\Parteek Arora\OneDrive\Desktop\Construct week\Capture.PNG",
-                },
-                {
-                    imge_url:"https://cdn.shopify.com/s/files/1/0153/8863/products/Headphone-Zone-Grado-SR325x-7_400x.jpg?v=1648446832",
-                    name:"GRADO - SR225X",
-                    Dis:"In-Ears With 1 DD + 1 BA Drivers",
-                    price1:"From ₹ 1,699",
-                    price2:"₹ 2,499",
-                    dummyimg:"C:\Users\Parteek Arora\OneDrive\Desktop\Construct week\Capture.PNG",
-                },
-                {
-                    imge_url:"https://cdn.shopify.com/s/files/1/0153/8863/products/v-moda-crossfade-m-100-master-headphone-zone-11985642913855_400x.jpg?v=1581077461",
-                    name:"GRADO - SR325X",
-                    Dis:"In-Ears With 1 DD + 1 BA Drivers",
-                    price1:"From ₹ 1,699",
-                    price2:"₹ 2,499",
-                    dummyimg:"C:\Users\Parteek Arora\OneDrive\Desktop\Construct week\Capture.PNG",
-                },
-                {
-                    imge_url:"https://cdn.shopify.com/s/files/1/0153/8863/products/Headphone-Zone-Campfire-Audio-Honeydew-02_400x.jpg?v=1624099609",
-                    name:"V-MODA - CROSSFADE M-100 MASTER",
-                    Dis:"In-Ears With 1 DD + 1 BA Drivers",
-                    price1:"From ₹ 1,699",
-                    price2:"₹ 2,499",
-                    dummyimg:"C:\Users\Parteek Arora\OneDrive\Desktop\Construct week\Capture.PNG",
-                },
-             
-            ];
-             var filterdata=JSON.parse(JSON.stringify(mensdata))
-            var cartdata;
-            if(localStorage.getItem("cartdata")===null){
-                cartdata=[]
-            }else{
-                cartdata=JSON.parse(localStorage.getItem("cartdata"))
-            }
-          document.querySelector("#SortInput").addEventListener("change",function(){
-            var SortType=document.querySelector("#SortInput").value;
-            if(SortType==='none'){
-                displaydata(mensdata)
-            }else{
+    </div>
+    <div id="footer">
 
-            
-           filterdata.sort(function(a,b){
-               
-                if(SortType=="lowtohigh"){
-                    return a.price-b.price;
+    </div>
+</body>
+<script type="module">
+    import nav from "./navbar.js"
+    var navi=document.getElementById("navi")
+    navi.innerHTML=nav()
+
+    // import footer from "footer_cmpt.js"
+    // var footerr=document.getElementById("footer")
+  
+    // footerr.innerHTML=footerr()
+// console.log(navi.innerHTML)
+let loc_data=localStorage.getItem("headPhoneuserData")
+    // console.log(loc_data)
+    if(loc_data.length!=0){
+        document.getElementById("login_acc").innerText="Account"
+    }
+    else{
+        document.getElementById("login_acc").innerText="Login"
+    }
+
+    let acc=document.getElementById("login_acc")
+    if(acc.innerText="Account"){
+        acc.href="aboutperosn.html"
+    }
+</script>
+<script src="./navbar/nav_compt.js"></script>
+
+<script type="module">
+   
+
+    import footer from "./footer_cmpt.js"
+    var footerr=document.getElementById("footer")
+//   console.log(footer)
+    footerr.innerHTML=footer()
+</script>
+
+
+<script>
+
+    var mensdata = [
+        {
+            imge_url: "https://cdn.shopify.com/s/files/1/0153/8863/products/Headphone-Zone-Meze-99-Neo-1160-1160-2_400x.jpg?v=1591944478",
+            name: "MEZE - 99 NEO",
+            Dis: "Closed-Back Headphone",
+            price1: "₹ 14,999",
+            price2: "₹ 19,999",
+            dummyimg: "",
+        },
+        {
+            imge_url: "https://cdn.shopify.com/s/files/1/0153/8863/products/sennheiser-hd-569-headphone-zone-29093551111_400x.jpg?v=1579780219",
+            name: "SENNHEISER - HD 569",
+            Dis: "Semi Open-Back Headphone",
+            price1: "₹ 12,990",
+            price2: "₹ ",
+            dummyimg: "",
+        },
+        {
+            imge_url: "https://cdn.shopify.com/s/files/1/0153/8863/products/Headphone-Zone-Campfire-Audio-Honeydew-02_400x.jpg?v=1624099609",
+            name: "HIFIMAN - HE400SE",
+            Dis: "Planar Magnetic Open Backs",
+            price1: "₹ 10,990",
+            price2: "₹ ₹ 16,999 ",
+            dummyimg: "",
+        },
+
+
+        {
+            imge_url: "https://cdn.shopify.com/s/files/1/0153/8863/products/beyerdynamic-dt-770-pro-headphone-zone-13980464185407_400x.jpg?v=1579662488",
+            name: "BEYERDYNAMIC - DT 770 PRO",
+            Dis: "Closed-Back Studio Headphone",
+            price1: "From ₹ 9,999",
+            price2: "₹ 17,050",
+            dummyimg: "C:\Users\Parteek Arora\OneDrive\Desktop\Construct week\Capture.PNG",
+        },
+        {
+            imge_url: "https://cdn.shopify.com/s/files/1/0153/8863/products/Headphone-Zone-dt-990-pro-1160-1160-5_400x.jpg?v=1598946254",
+            name: "BEYERDYNAMIC - DT 990 PRO",
+            Dis: "Open-Back Studio Headphone",
+            price1: "₹ 12,999",
+            price2: "₹ 16,489",
+            dummyimg: "C:\Users\Parteek Arora\OneDrive\Desktop\Construct week\Capture.PNG",
+        },
+        {
+            imge_url: "https://cdn.shopify.com/s/files/1/0153/8863/products/Headphone-Zone-HiFiMAN-Sundara-1160-1160-2_400x.jpg?v=1592332661",
+            name: "MEZE - 99 CLASSICS",
+            Dis: "Closed-Back Headphone",
+            price1: "₹ 26,999",
+            price2: "₹ 30,999",
+            dummyimg: "C:\Users\Parteek Arora\OneDrive\Desktop\Construct week\Capture.PNG",
+        },
+        {
+            imge_url: "https://cdn.shopify.com/s/files/1/0153/8863/products/Headphone-Zone-HiFiMAN-Deva-Wired-1160-1160-6_400x.jpg?v=1596280148",
+            name: "AUDIO-TECHNICA - ATH-M50X",
+            Dis: "In-Ears With 1 DD + 1 BA Drivers",
+            price1: "From ₹ 1,699",
+            price2: "₹ 2,499",
+            dummyimg: "C:\Users\Parteek Arora\OneDrive\Desktop\Construct week\Capture.PNG",
+        },
+        {
+            imge_url: "https://cdn.shopify.com/s/files/1/0153/8863/products/Headphone-Zone-Audio-technica-m50x-1160-1160-Black_400x.jpg?v=1590592477",
+            name: "HIFIMAN - DEVA (WIRED)",
+            Dis: "In-Ears With 1 DD + 1 BA Drivers",
+            price1: "From ₹ 1,699",
+            price2: "₹ 2,499",
+            dummyimg: "C:\Users\Parteek Arora\OneDrive\Desktop\Construct week\Capture.PNG",
+        },
+        {
+            imge_url: "https://cdn.shopify.com/s/files/1/0153/8863/products/Headphone-Zone-grado-SR60x-01_400x.jpg?v=1648039536",
+            name: "AUDIO-TECHNICA - ATH-R70X",
+            Dis: "In-Ears With 1 DD + 1 BA Drivers",
+            price1: "From ₹ 1,699",
+            price2: "₹ 2,499",
+            dummyimg: "C:\Users\Parteek Arora\OneDrive\Desktop\Construct week\Capture.PNG",
+        },
+        {
+            imge_url: "https://cdn.shopify.com/s/files/1/0153/8863/products/Headphone-Zone-Grado-SR80x-02_400x.jpg?v=1647928592",
+            name: "SHURE - SRH440",
+            Dis: "In-Ears With 1 DD + 1 BA Drivers",
+            price1: "From ₹ 1,699",
+            price2: "₹ 2,499",
+            dummyimg: "C:\Users\Parteek Arora\OneDrive\Desktop\Construct week\Capture.PNG",
+        },
+        {
+            imge_url: "https://cdn.shopify.com/s/files/1/0153/8863/products/Headphone-Zone-Grado-SR125x-02_400x.jpg?v=1647947259",
+            name: "KS - ZEN PRO X",
+            Dis: "In-Ears With 1 DD + 1 BA Drivers",
+            price1: "From ₹ 1,699",
+            price2: "₹ 2,499",
+            dummyimg: "C:\Users\Parteek Arora\OneDrive\Desktop\Construct week\Capture.PNG",
+        },
+        {
+            imge_url: "https://cdn.shopify.com/s/files/1/0153/8863/products/Headphone-Zone-Grado-SR225x-1_400x.jpg?v=1647951107",
+            NAME: "GRADO - SR60X",
+            Dis: "In-Ears With 1 DD + 1 BA Drivers",
+            price1: "From ₹ 1,699",
+            price2: "₹ 2,499",
+            dummyimg: "C:\Users\Parteek Arora\OneDrive\Desktop\Construct week\Capture.PNG",
+        },
+        {
+            imge_url: "https://cdn.shopify.com/s/files/1/0153/8863/products/Headphone-Zone-Grado-SR325x-7_400x.jpg?v=1648446832",
+            name: "GRADO - SR225X",
+            Dis: "In-Ears With 1 DD + 1 BA Drivers",
+            price1: "From ₹ 1,699",
+            price2: "₹ 2,499",
+            dummyimg: "C:\Users\Parteek Arora\OneDrive\Desktop\Construct week\Capture.PNG",
+        },
+        {
+            imge_url: "https://cdn.shopify.com/s/files/1/0153/8863/products/v-moda-crossfade-m-100-master-headphone-zone-11985642913855_400x.jpg?v=1581077461",
+            name: "GRADO - SR325X",
+            Dis: "In-Ears With 1 DD + 1 BA Drivers",
+            price1: "From ₹ 1,699",
+            price2: "₹ 2,499",
+            dummyimg: "C:\Users\Parteek Arora\OneDrive\Desktop\Construct week\Capture.PNG",
+        },
+        {
+            imge_url: "https://cdn.shopify.com/s/files/1/0153/8863/products/Headphone-Zone-Campfire-Audio-Honeydew-02_400x.jpg?v=1624099609",
+            name: "V-MODA - CROSSFADE M-100 MASTER",
+            Dis: "In-Ears With 1 DD + 1 BA Drivers",
+            price1: "From ₹ 1,699",
+            price2: "₹ 2,499",
+            dummyimg: "C:\Users\Parteek Arora\OneDrive\Desktop\Construct week\Capture.PNG",
+        },
+
+    ];
+    var filterdata = JSON.parse(JSON.stringify(mensdata))
+    var cartdata;
+    if (localStorage.getItem("cartdata") === null) {
+        cartdata = []
+    } else {
+        cartdata = JSON.parse(localStorage.getItem("cartdata"))
+    }
+    document.querySelector("#SortInput").addEventListener("change", function () {
+        var SortType = document.querySelector("#SortInput").value;
+        if (SortType === 'none') {
+            displaydata(mensdata)
+        } else {
+
+
+            filterdata.sort(function (a, b) {
+
+                if (SortType == "lowtohigh") {
+                    return a.price - b.price;
                 }
-                return b.price-a.price
+                return b.price - a.price
             });
-        
-         displaydata(filterdata)
-          }
-          });
-        
-        
-          function displaydata(mensdata){
-              document.querySelector("#container").innerHTML= '';
-          mensdata.forEach(function(mendata){
-      
-            var box=document.createElement("div");
-            box.setAttribute("class","box")  // box
-            var img=document.createElement("img");   // img inside box
-            img.src=mendata.imge_url
-            var name=document.createElement("h3");     // name inside box
-            name.textContent=mendata.name;
-            var dis=document.createElement("p");    // price inside box
-            dis.innerText=mendata.Dis;
-            var price1=document.createElement("h4");    // price inside box
-            price1.innerText=mendata.price1;
-            var price2=document.createElement("h4");    // price inside box
-            price2.innerText=mendata.price2;
-        
-           
-            var dummy=document.createElement("img2");    // price inside box
-            dummy.src=mendata.dummyimg;
-         
 
-          
-            img.addEventListener("mouseover",function(){
-               if(img.src!="https://cdn.shopify.com/s/files/1/0153/8863/products/Headphone-Zone-Meze-99-Neo-1160-1160-2_400x.jpg?v=1591944478"){
-                   img.src="https://cdn.shopify.com/s/files/1/0153/8863/products/Headphone-Zone-Meze-99-Neo-1160-1160-2_400x.jpg?v=1591944478"
-               }else{
-               img.src="https://cdn.shopify.com/s/files/1/0153/8863/products/Headphone-Zone-dt-990-pro-1160-1160-5_400x.jpg?v=1598946254"
-               }
+            displaydata(filterdata)
+        }
+    });
+
+
+    function displaydata(mensdata) {
+        document.querySelector("#container").innerHTML = '';
+        mensdata.forEach(function (mendata) {
+
+            var box = document.createElement("div");
+            box.setAttribute("class", "box")  // box
+            var img = document.createElement("img");   // img inside box
+            img.src = mendata.imge_url
+            var name = document.createElement("h3");     // name inside box
+            name.textContent = mendata.name;
+            var dis = document.createElement("p");    // price inside box
+            dis.innerText = mendata.Dis;
+            var price1 = document.createElement("h4");    // price inside box
+            price1.innerText = mendata.price1;
+            var price2 = document.createElement("h4");    // price inside box
+            price2.innerText = mendata.price2;
+
+
+            var dummy = document.createElement("img2");    // price inside box
+            dummy.src = mendata.dummyimg;
+
+
+
+            img.addEventListener("mouseover", function () {
+                if (img.src != "https://cdn.shopify.com/s/files/1/0153/8863/products/Headphone-Zone-Meze-99-Neo-1160-1160-2_400x.jpg?v=1591944478") {
+                    img.src = "https://cdn.shopify.com/s/files/1/0153/8863/products/Headphone-Zone-Meze-99-Neo-1160-1160-2_400x.jpg?v=1591944478"
+                } else {
+                    img.src = "https://cdn.shopify.com/s/files/1/0153/8863/products/Headphone-Zone-dt-990-pro-1160-1160-5_400x.jpg?v=1598946254"
+                }
             })
-            box.append(img,name,dis,price1,price2,dummy);
+            box.append(img, name, dis, price1, price2, dummy);
             document.querySelector("#container").append(box);
 
-    }) 
-}
-displaydata(mensdata);
-     function filterlessthan900(mensdata){
-        var newdata=mensdata.filter(function(productitem){
-            if(productitem.price<=900){
+        })
+    }
+    displaydata(mensdata);
+    function filterlessthan900(mensdata) {
+        var newdata = mensdata.filter(function (productitem) {
+            if (productitem.price <= 900) {
                 return true;
-            }else{
+            } else {
                 return false;
             }
         })
         return newdata;
-     }     
-     function filterlessthan1200(mensdata){
-        var newdata=mensdata.filter(function(productitem){
-            if(productitem.price<=1200){
+    }
+    function filterlessthan1200(mensdata) {
+        var newdata = mensdata.filter(function (productitem) {
+            if (productitem.price <= 1200) {
                 return true;
-            }else{
+            } else {
                 return false;
             }
         })
         return newdata;
-     }
-     document.querySelector("#lessthan900").addEventListener('click',function(){
-        var data=filterlessthan900(mensdata);
+    }
+    document.querySelector("#lessthan900").addEventListener('click', function () {
+        var data = filterlessthan900(mensdata);
         displaydata(data)
-     })
-     document.querySelector("#lessthan1200").addEventListener('click',function(){
-        var data=filterlessthan1200(mensdata);
+    })
+    document.querySelector("#lessthan1200").addEventListener('click', function () {
+        var data = filterlessthan1200(mensdata);
         displaydata(data)
-     })
-     </script>
+    })
+</script>
 
-</body>
-</html> 
-</body>
+
+
+
 </html>
