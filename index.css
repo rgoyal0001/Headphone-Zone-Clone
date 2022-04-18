@@ -157,6 +157,10 @@ span{
     border-radius: 10px;
     width: 100%;
 }
+.zoom:hover{
+    transform: scale(1.01); 
+
+}
 #text-block{
     display: block;
     position: absolute;
