@@ -91,9 +91,13 @@ div > a{
     #homeAudioImg {
         grid-template-columns: repeat(3, 1fr);
     }
+
     .newLaunchesImg{
         grid-template-columns: repeat(1, 1fr);
     }
+   
+}
+@media all and (min-width: 64px) and (max-width: 740px){
     #afterVideo{
         grid-template-columns: repeat(1, 1fr);
 
