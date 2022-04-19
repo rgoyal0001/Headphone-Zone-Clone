@@ -54,11 +54,12 @@
 .product{
     display: flex;
     width: 100%;
-    border: 2px solid red;
+    /* border: 2px solid red; */
     justify-content: space-evenly;
 }
 .product div{
-    border: 2px solid red;
+    /* border: 2px solid red; */
+    border: none;
 }
 .product img{
     width: 100%;
@@ -115,16 +116,18 @@
 .qntadd{
     width: 30px;
     height: 30px;
-    border: 0px solid red;
+    /* border: 0px solid red; */
     background-color: white;
     border-radius: 20px;
     font-size: x-large;
+    border: none;
 }
 #removeButton{
-    border: 0px solid red;
+    /* border: 0px solid red; */
     background-color: white;
     padding: 0px;
     width: 90px;
+    border: none;
 }
 #emptyCartDiv{
     display: flex;

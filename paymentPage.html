@@ -3,8 +3,17 @@
 <head>
     <title>payment page</title>
     <link rel="stylesheet" href="./paymentPage.css">
+    <link rel="icon" type="image/x-icon" href="favicon (2).png">
+
+    <link rel="stylesheet" href="./navbar/navbar.css">
+    <link rel="stylesheet" href="footer.css"/>
 </head>
 <body>
+    <div id="navi">
+
+    </div>
+    
+
     <div id="container">
         <div id="CardDetails">
             <div id="cardDetailsDiv">
@@ -15,17 +24,17 @@
                         <select name="" id="cardMonth">
                             <option value="select">select</option>
                             <option value="01"> 01</option>   
-                            <option value="02"> 01</option>   
-                            <option value="03"> 01</option>   
-                            <option value="04"> 01</option> 
-                            <option value="05"> 01</option>   
-                            <option value="06"> 01</option> 
-                            <option value="07"> 01</option>   
-                            <option value="08"> 01</option> 
-                            <option value="09"> 01</option>   
-                            <option value="10"> 01</option>       
-                            <option value="11"> 01</option>   
-                            <option value="12"> 01</option>  
+                            <option value="02"> 02</option>   
+                            <option value="03"> 03</option>   
+                            <option value="04"> 04</option> 
+                            <option value="05"> 05</option>   
+                            <option value="06"> 06</option> 
+                            <option value="07"> 07</option>   
+                            <option value="08"> 08</option> 
+                            <option value="09"> 09</option>   
+                            <option value="10"> 10</option>       
+                            <option value="11"> 11</option>   
+                            <option value="12"> 12</option>  
                         </select>
                         <input type="number" placeholder="YYYY" id="cardYear">
                         <input type="number" placeholder="CVV" id="cardCvv">
@@ -60,12 +69,71 @@
                 <p id="totalTag"></p>
             </div>
         </div>
-    </div>    
+    </div>   
+    <div id="footer">
+
+    </div>
 </body>
+<script type="module">
+    import nav from "./navbar.js"
+    var navi=document.getElementById("navi")
+    navi.innerHTML=nav()
+
+    // import footer from "footer_cmpt.js"
+    // var footerr=document.getElementById("footer")
+  
+    // footerr.innerHTML=footerr()
+// console.log(navi.innerHTML)
+let loc_data=localStorage.getItem("headPhoneuserData")
+    // console.log(loc_data)
+    if(loc_data.length!=0){
+        document.getElementById("login_acc").innerText="Account"
+    }
+    else{
+        document.getElementById("login_acc").innerText="Login"
+    }
+
+    let acc=document.getElementById("login_acc")
+    if(acc.innerText="Account"){
+        acc.href="aboutperosn.html"
+    }
+    
+    if(localStorage.getItem("Additemtocart")!=null){
+    let lc_len=localStorage.getItem("counter")
+    var lc_len_int=parseInt(lc_len)
+    console.log(typeof(lc_len_int))
+// if(lc_len)
+if(lc_len_int>0){
+    document.getElementById("cart").innerText=lc_len_int
+
+}
+}
+else{
+    document.getElementById("cart").innerText=0
+    lc_len_int=0
+    lc_len=JSON.stringify(lc_len_int)
+    localStorage.setItem("counter",lc_len)
+
+
+}
+</script>
+
+<script type="module">
+   
+
+    import footer from "./footer_cmpt.js"
+    var footerr=document.getElementById("footer")
+//   console.log(footer)
+    footerr.innerHTML=footer()
+</script>
+
+
+<script src="./navbar/nav_compt.js"></script>
+
 <script>
     window.addEventListener("load",checkOutPageCreator)
 
-    var cartArr=JSON.parse(localStorage.getItem("headphoneCartItems")) || [];   
+    var cartArr=JSON.parse(localStorage.getItem("Additemtocart")) || [];   
     var total=localStorage.getItem("headphoneCheckOutTotal");
     var productsDiv=document.querySelector("#products");
 
@@ -85,12 +153,12 @@
 
     function subtotalTag(){
         var subTag=document.querySelector("#subTootalTag");
-        subTag.innerText=total;
+        subTag.innerText='₹'+total;
     }
 
     function totalTag(){
         var totTag=document.querySelector("#totalTag");
-        totTag.innerText=total;
+        totTag.innerText="₹"+total;
     }
 
     function productsWindow(){
@@ -100,7 +168,7 @@
             
             var imageDiv=document.createElement("div");
             imageDiv.setAttribute("class","imageDiv");
-            var imageUrllink=element.imageUrl;
+            var imageUrllink=element.imge_url;
             var imageElement=document.createElement("img");
             imageElement.setAttribute("class","image");
             imageElement.src=imageUrllink;
@@ -116,15 +184,14 @@
             detailsDiv.setAttribute("class","detailsDiv");
             var nameElement=document.createElement("h5");
             nameElement.setAttribute("class","nameElement");
-            nameElement.innerText=element.productName;
+            nameElement.innerText=element.name;
             var colorElement=document.createElement("p");
-            colorElement.setAttribute("class","colorElement");
-            colorElement.innerText=element. productColor;
+         
             detailsDiv.append(nameElement,colorElement);
 
             var priceDiv=document.createElement("div");
             priceDiv.setAttribute("class", "priceDiv");
-            var price=((parseInt(element.discountPrice))*(parseInt(element.quantity)));
+            var price=((parseInt(element.price1))*(parseInt(element.quantity)));
             var priceElement=document.createElement("h5");
             priceElement.setAttribute("class","priceElement");
             priceElement.innerText="₹"+price+".00";
@@ -138,7 +205,7 @@
     document.querySelector("#paymentPage").addEventListener("submit",cardValidate);
 var totalAmount=parseInt(localStorage.getItem("headphoneCheckOutTotal"));
 var totalAmountTag=document.querySelector("#paymentAmount");
-totalAmountTag.innerText="To pay the Amount "+totalAmount;
+totalAmountTag.innerText="The amount to pay is  "+"₹"+totalAmount;
 
     function cardValidate(){
         event.preventDefault();
@@ -150,7 +217,7 @@ totalAmountTag.innerText="To pay the Amount "+totalAmount;
         
        if(cardNumber.length==16 && cardMonth!="select" && cardYear.length==4 && parseInt(cardYear)>=2022 && cardCvv.length==3 && cardName!==""){
            alert("Your order is successfully placed continue to shop");
-           window.location.href="./products.html";
+           window.location.href="index.html";
        }
        else{
            alert("Error");

@@ -3,8 +3,15 @@
 <head>
     <title>check out page</title>
     <link rel="stylesheet" href="./checkOutInformationPage.css">
+    <link rel="icon" type="image/x-icon" href="favicon (2).png">
+    
+    <link rel="stylesheet" href="./navbar/navbar.css">
+    <link rel="stylesheet" href="footer.css"/>
 </head>
 <body>
+    <div id="navi">
+
+    </div>
     <div id="container">
         <div id="adressDetails">
             <div>
@@ -19,8 +26,8 @@
                 </div>
                 <div>
                     <div style="border: 2px solid grey; border-radius: 5px;">
-                        <p style="margin:0px">Email</p>
-                        <input type="email" style="border: 0px solid grey; width:99%" id="emailEntry">
+                       
+                        <input type="email" style="border: 0px solid grey; width:99%;height: 50px;font-size: 15px;" id="emailEntry" placeholder="Enter your email">
                     </div >
                     <div id="offersCheckBox"><input type="checkbox"><p>Email me with news and offers</p></div>
                 </div>
@@ -72,7 +79,7 @@
             <div id="promoCode">
                 <form action="" id="promoForm">
                     <input type="text" placeholder="Gift card or Dicount code"id="inputPromo" style="border-radius:2px; width: 380px;height: 40px;">
-                    <input type="submit" value="Apply" id="applybutton" style="color:white;border-radius: 10px;background-color: rgb(237, 231, 231);width: 80px; height: 50px; font-size: large;">
+                    <input type="submit" value="Apply" id="applybutton" style="color:white;border-radius: 10px;background-color: blue;width: 80px; height: 50px; font-size: large;">
                 </form>
             </div>
             <div id="amountDetails">
@@ -91,11 +98,74 @@
             </div>
         </div>
     </div>    
+    <div id="footer1">
+
+    </div>
 </body>
+
+
+<script type="module">
+    import nav from "./navbar.js"
+    var navi=document.getElementById("navi")
+    navi.innerHTML=nav()
+
+    // import footer from "footer_cmpt.js"
+    // var footerr=document.getElementById("footer")
+  
+    // footerr.innerHTML=footerr()
+// console.log(navi.innerHTML)
+let loc_data=localStorage.getItem("headPhoneuserData")
+    // console.log(loc_data)
+    if(loc_data.length!=0){
+        document.getElementById("login_acc").innerText="Account"
+    }
+    else{
+        document.getElementById("login_acc").innerText="Login"
+    }
+
+    let acc=document.getElementById("login_acc")
+    if(acc.innerText="Account"){
+        acc.href="aboutperosn.html"
+    }
+    
+    if(localStorage.getItem("Additemtocart")!=null){
+    let lc_len=localStorage.getItem("counter")
+    var lc_len_int=parseInt(lc_len)
+    console.log(typeof(lc_len_int))
+// if(lc_len)
+if(lc_len_int>0){
+    document.getElementById("cart").innerText=lc_len_int
+
+}
+}
+else{
+    document.getElementById("cart").innerText=0
+    lc_len_int=0
+    lc_len=JSON.stringify(lc_len_int)
+    localStorage.setItem("counter",lc_len)
+
+
+}
+</script>
+
+<script type="module">
+   
+
+    import footer from "./footer_cmpt.js"
+    var footerr=document.getElementById("footer1")
+//   console.log(footer)
+    footerr.innerHTML=footer()
+</script>
+
+
+<script src="./navbar/nav_compt.js"></script>
 <script>
+
+
     window.addEventListener("load",checkOutPageCreator)
 
-    var cartArr=JSON.parse(localStorage.getItem("headphoneCartItems")) || [];   
+    var cartArr=JSON.parse(localStorage.getItem("Additemtocart")) || [];   
+    console.log(cartArr)
     var total=localStorage.getItem("headphoneCheckOutTotal");
     var productsDiv=document.querySelector("#products");
 
@@ -115,13 +185,20 @@
 
     function subtotalTag(){
         var subTag=document.querySelector("#subTootalTag");
-        subTag.innerText=total;
+        subTag.innerText="₹"+total;
     }
 
     function totalTag(){
         var totTag=document.querySelector("#totalTag");
-        totTag.innerText=total;
+        totTag.innerText="₹"+total;
     }
+//     Dis: "In-Ears With 1 Dynamic Driver"
+// dummyimg: "./stockphotos/Capture2.PNG"
+// imge_url: "https://cdn.shopify.com/s/files/1/0153/8863/products/Headphone-Zone-CCA-CRA-Black-4_400x.jpg?v=1648213897"
+// name: "CCA - CRA"
+// price1: 1399
+// price2: 1499
+// quantity: "1"
 
     function productsWindow(){
         cartArr.forEach(element => {
@@ -130,7 +207,7 @@
             
             var imageDiv=document.createElement("div");
             imageDiv.setAttribute("class","imageDiv");
-            var imageUrllink=element.imageUrl;
+            var imageUrllink=element.imge_url;
             var imageElement=document.createElement("img");
             imageElement.setAttribute("class","image");
             imageElement.src=imageUrllink;
@@ -146,7 +223,7 @@
             detailsDiv.setAttribute("class","detailsDiv");
             var nameElement=document.createElement("h5");
             nameElement.setAttribute("class","nameElement");
-            nameElement.innerText=element.productName;
+            nameElement.innerText=element.name;
             var colorElement=document.createElement("p");
             colorElement.setAttribute("class","colorElement");
             colorElement.innerText=element. productColor;
@@ -154,7 +231,7 @@
 
             var priceDiv=document.createElement("div");
             priceDiv.setAttribute("class", "priceDiv");
-            var price=((parseInt(element.discountPrice))*(parseInt(element.quantity)));
+            var price=((parseInt(element.price1))*(parseInt(element.quantity)));
             var priceElement=document.createElement("h5");
             priceElement.setAttribute("class","priceElement");
             priceElement.innerText="₹"+price+".00";

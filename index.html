@@ -6,8 +6,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>index</title>
     <link rel="stylesheet" href="index.css">
+    <link rel="icon" type="image/x-icon" href="favicon (2).png">
+    <link rel="stylesheet" href="./navbar/navbar.css">
+    <link rel="stylesheet" href="footer.css"/>
 </head>
-<body>
+<body id="body">
     <div>
         <div id="navi">
 
@@ -495,8 +498,54 @@
     </div>
     
 
-    
+    <div id="footer">
+
+    </div>
 
 </body>
+<script type="module">
+    import nav from "./navbar.js"
+    var navi=document.getElementById("navi")
+    navi.innerHTML=nav()
+
+let loc_data=localStorage.getItem("headPhoneuserData")
+    // console.log(loc_data.length)
+    if(loc_data.length!=0){
+        document.getElementById("login_acc").innerText="Account"
+    }
+    else{
+        document.getElementById("login_acc").innerText="Login"
+    }
+
+    let acc=document.getElementById("login_acc")
+    if(acc.innerText="Account"){
+        acc.href="aboutperosn.html"
+
+    }
+    if(localStorage.getItem("Additemtocart")!=null){
+    let lc_len=localStorage.getItem("counter")
+    var lc_len_int=parseInt(lc_len)
+    console.log(typeof(lc_len_int))
+// if(lc_len)
+if(lc_len_int>0){
+    document.getElementById("cart").innerText=lc_len_int
+
+}
+}
+
+
+</script>
+
+<script type="module">
+   
+
+    import footer from "./footer_cmpt.js"
+    var footerr=document.getElementById("footer")
+//   console.log(footer)
+    footerr.innerHTML=footer()
+</script>
+
+
+<script src="./navbar/nav_compt.js"></script>
 <script src="index.js"></script>
 </html>

@@ -1,3 +1,20 @@
+*{
+    padding: 0;
+    margin: 0;
+    font-family:  Roboto, sans-serif;
+    /* background-color: black; */
+    width: auto;
+}
+
+#footer{
+    z-index: 1;
+    height: 200px;
+    color: gray;
+}
+
+#navi{
+    z-index: 1;
+}
 .firstSlide {
     position: relative;
     width: 100%;
@@ -132,13 +149,17 @@ p{
     text-align: left;
     margin-right: +160px;
 }
-
+.text2{
+    color: white;
+    text-align: center;
+}
 h5{
     text-align: left;
 }
 span{
     text-align: center;
 }
+
 .newLaunchesImg{
     display: grid;
     grid-template-columns: repeat(3,1fr);
