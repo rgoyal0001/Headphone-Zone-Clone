@@ -282,7 +282,7 @@ var nav=()=> {
             <a onclick="opensearch()">Search</a>
         </div>
         <a href="./loginPage.html" id="login_acc">Login</a>
-    <a href="">Cart</a>
+    <a href="./cartPage.html">Cart</a>
     <div id="cart">
         0
     </div>

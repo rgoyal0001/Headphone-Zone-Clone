@@ -98,6 +98,25 @@ let loc_data=localStorage.getItem("headPhoneuserData")
     if(acc.innerText="Account"){
         acc.href="aboutperosn.html"
     }
+    
+    if(localStorage.getItem("Additemtocart")!=null){
+    let lc_len=localStorage.getItem("counter")
+    var lc_len_int=parseInt(lc_len)
+    console.log(typeof(lc_len_int))
+// if(lc_len)
+if(lc_len_int>0){
+    document.getElementById("cart").innerText=lc_len_int
+
+}
+}
+else{
+    document.getElementById("cart").innerText=0
+    lc_len_int=0
+    lc_len=JSON.stringify(lc_len_int)
+    localStorage.setItem("counter",lc_len)
+
+
+}
 </script>
 
 <script type="module">

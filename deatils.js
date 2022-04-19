@@ -1,12 +1,6 @@
 var value=JSON.parse(localStorage.getItem("indatails"))
 
-// Dis: "Tribrid Driver In-Ears Tuned By Crinacle"
-// dummyimg: "C:UsersParteek AroraOneDriveDesktopConstruct weekCapture.PNG"
-// imge_url: "https://cdn.shopify.com/s/files/1/0153/8863/products/Headphone-Zone-KZ-ZEX-Pro-Black-01_400x.jpg?v=1641194893"
-// imge_url2: "https://cdn.shopify.com/s/files/1/0057/8938/4802/products/main-img-R333_300x.png?v=1641801662"
-// name: "KZ X CRINACLE - CRN (ZEX PRO)"
-// price1: "₹ 2,790"
-// price2: "₹ 4,999"
+
 var image_box=document.getElementById("image")
 var iamge_url=document.createElement("img")
 iamge_url.setAttribute("id","side_image")
@@ -21,11 +15,17 @@ pd_dis.innerText=value.Dis
 pd_rev=document.createElement("img")
 pd_rev.src="./review.png"
 pd_price=document.createElement("h5")
-pd_price.innerText=value.price1
+pd_price.innerText=`₹${value.price1}`
 pd_EMI=document.createElement("img")
 pd_EMI.src="./emi.png"
 pd_addtocart=document.createElement("button")
+pd_addtocart.addEventListener("click",function(){
+    tocart(value)
+    increase()
+
+})
 pd_addtocart.innerText="ADD TO CART"
+
 pd_del=document.createElement("img")
 pd_del.src="./del.png"
 details_box.append(pd_name,pd_dis,pd_rev,pd_price,pd_EMI,pd_addtocart,pd_del)
@@ -36,8 +36,8 @@ var earphonedata = [
         imge_url2:"https://cdn.shopify.com/s/files/1/0057/8938/4802/products/main-img-R333_300x.png?v=1641801662",
         name: "KS - ZEN PRO X",
         Dis: "In-Ears With 1 DD + 1 BA Drivers",
-        price1: "From ₹ 1,699",
-        price2: "₹ 2,499",
+        price1: "1,699",
+        price2: "2,499",
         dummyimg: "https://lh3.googleusercontent.com/ClLbCfQoKRb2Dt4MGO_Nyz2rlt08FCLWjMvfzaZBKB5npzlE6znWfMOUoq-SnpXoC88LsA=s170",
     },
     {
@@ -45,8 +45,8 @@ var earphonedata = [
         imge_url2:"https://cdn.shopify.com/s/files/1/0057/8938/4802/products/main1_c1144ee5-d03e-483a-8e5f-7552b138a4b1_300x.png?v=1649857754",
         name: "BLON - BL-03",
         Dis: "In-Ears With 1 Dynamic Driver",
-        price1: "₹ 1,990",
-        price2: "₹ 3,999",
+        price1: "1,990",
+        price2: "3,999",
 
         dummyimg: "C:\Users\Parteek Arora\OneDrive\Desktop\Construct week\Capture.PNG",
     },
@@ -55,8 +55,8 @@ var earphonedata = [
         imge_url2:"https://cdn.shopify.com/s/files/1/0057/8938/4802/products/main-img-R333_300x.png?v=1641801662",
         name: "CCA - CRA",
         Dis: "In-Ears With 1 Dynamic Driver",
-        price1: "₹ 1,399",
-        price2: "₹ 1,499",
+        price1: "1,399",
+        price2: "1,499",
         dummyimg: "C:\Users\Parteek Arora\OneDrive\Desktop\Construct week\Capture.PNG",
     },
     {
@@ -64,8 +64,8 @@ var earphonedata = [
         imge_url2:"https://cdn.shopify.com/s/files/1/0057/8938/4802/products/main-img-R333_300x.png?v=1641801662",
         name: "CCA - C10 PRO",
         Dis: "In-Ears With 1DD + 4BA Driver",
-        price1: "₹ 2,999",
-        price2: "₹ 3,999",
+        price1: "2,999",
+        price2: "3,999",
         dummyimg: "C:\Users\Parteek Arora\OneDrive\Desktop\Construct week\Capture.PNG",
     },
     {
@@ -73,8 +73,8 @@ var earphonedata = [
         imge_url2:"https://cdn.shopify.com/s/files/1/0057/8938/4802/products/main-img-R333_300x.png?v=1641801662",
         name: "KZ X CRINACLE - CRN (ZEX PRO)",
         Dis: "Tribrid Driver In-Ears Tuned By Crinacle",
-        price1: "₹ 2,790",
-        price2: "₹ 4,999",
+        price1: "2,790",
+        price2: "4,999",
         dummyimg: "C:\Users\Parteek Arora\OneDrive\Desktop\Construct week\Capture.PNG",
     },
     {
@@ -82,8 +82,8 @@ var earphonedata = [
         imge_url2:"https://cdn.shopify.com/s/files/1/0057/8938/4802/products/main-img-R333_300x.png?v=1641801662",
         name: "KZ - ZST X",
         Dis: "In-Ears With 1 DD + 1 BA Drivers",
-        price1: "From ₹ 1,399",
-        price2: "₹ 1,999",
+        price1: "1,399",
+        price2: "1,999",
         dummyimg: "C:\Users\Parteek Arora\OneDrive\Desktop\Construct week\Capture.PNG",
     },
     {
@@ -91,8 +91,8 @@ var earphonedata = [
         imge_url2:"https://cdn.shopify.com/s/files/1/0057/8938/4802/products/main-img-R333_300x.png?v=1641801662",
         name: "FINAL - E500",
         Dis: "Earphones For Spatial Audio",
-        price1: "₹ 1,599",
-        price2: "₹ 1,999",
+        price1: "1,599",
+        price2: "1,999",
         dummyimg: "C:\Users\Parteek Arora\OneDrive\Desktop\Construct week\Capture.PNG",
     },
     {
@@ -100,8 +100,8 @@ var earphonedata = [
         imge_url2:"https://cdn.shopify.com/s/files/1/0057/8938/4802/products/main-img-R333_300x.png?v=1641801662",
         name: "FINAL - E2000",
         Dis: "In-Ears With 1 Dynamic Driver",
-        price1: "From ₹ 2,799",
-        price2: "₹ 2,999",
+        price1: "2,799",
+        price2: "2,999",
         dummyimg: "C:\Users\Parteek Arora\OneDrive\Desktop\Construct week\Capture.PNG",
     },
     {
@@ -109,8 +109,8 @@ var earphonedata = [
         imge_url2:"https://cdn.shopify.com/s/files/1/0057/8938/4802/products/main-img-R333_300x.png?v=1641801662",
         name: "FINAL - E3000",
         Dis: "In-Ears With 1 Dynamic Driver",
-        price1: "From ₹ 3,699",
-        price2: "₹ 3,999",
+        price1: "3,699",
+        price2: "3,999",
         dummyimg: "C:\Users\Parteek Arora\OneDrive\Desktop\Construct week\Capture.PNG",
     },
     {
@@ -118,8 +118,8 @@ var earphonedata = [
         imge_url2:"https://cdn.shopify.com/s/files/1/0057/8938/4802/products/main-img-R333_300x.png?v=1641801662",
         name: "FINAL - VR3000",
         Dis: "In-Ears With 1 Dynamic Driver",
-        price1: "₹ 5,999",
-        price2: "₹ 7,999",
+        price1: "5,999",
+        price2: "7,999",
         dummyimg: "C:\Users\Parteek Arora\OneDrive\Desktop\Construct week\Capture.PNG",
     },
     {
@@ -127,8 +127,8 @@ var earphonedata = [
         imge_url2:"https://cdn.shopify.com/s/files/1/0057/8938/4802/products/main-img-R333_300x.png?v=1641801662",
         name: "MEZE - 12 CLASSICS V2",
         Dis: "In-Ears With 1 Dynamic Driver",
-        price1: "From ₹ 4,499",
-        price2: "₹ 6,999",
+        price1: "4,499",
+        price2: "6,999",
         dummyimg: "https://lh3.googleusercontent.com/ClLbCfQoKRb2Dt4MGO_Nyz2rlt08FCLWjMvfzaZBKB5npzlE6znWfMOUoq-SnpXoC88LsA=s170",
     },
     {
@@ -136,8 +136,8 @@ var earphonedata = [
         imge_url2:"https://cdn.shopify.com/s/files/1/0057/8938/4802/products/main-img-R333_300x.png?v=1641801662",
         name: "HIFIMAN - RE800",
         Dis: "In-Ears With 9.2mm Nanotech Topology Dynamic Driver",
-        price1: "From ₹ 11,999",
-        price2: "₹ 12,999",
+        price1: "11,999",
+        price2: "12,999",
         dummyimg: "C:\Users\Parteek Arora\OneDrive\Desktop\Construct week\Capture.PNG",
     },
     {
@@ -145,8 +145,10 @@ var earphonedata = [
         imge_url2:"https://cdn.shopify.com/s/files/1/0057/8938/4802/products/main-img-R333_300x.png?v=1641801662",
         name: "IBASSO - IT01X",
         Dis: "n-Ears With 1 Dynamic Driver",
-        price1: "₹ 10,999",
-        price2: "₹ 11,999",
+        price1: "10,999",
+        price2: "11,999",
+        price2: "11,999",
+        price2: "11,999",
         dummyimg: "C:\Users\Parteek Arora\OneDrive\Desktop\Construct week\Capture.PNG",
     },
     {
@@ -154,8 +156,9 @@ var earphonedata = [
         imge_url2:"https://cdn.shopify.com/s/files/1/0057/8938/4802/products/main-img-R333_300x.png?v=1641801662",
         name: "1CUSTOM - JUNIOR",
         Dis: "In-Ears With 1 DD + 2 BA Drivers",
-        price1: "₹ 15,999",
-        price2: "₹ 16,999",
+        price1: "15,999",
+        price1: "15,999",
+        price2: "16,999",
         dummyimg: "C:\Users\Parteek Arora\OneDrive\Desktop\Construct week\Capture.PNG",
     },
     {
@@ -163,8 +166,8 @@ var earphonedata = [
         imge_url2:"https://cdn.shopify.com/s/files/1/0057/8938/4802/products/main-img-R333_300x.png?v=1641801662",
         name: "CAMPFIRE AUDIO - HONEYDEW",
         Dis: "In-Ears With 1 Dynamic Driver",
-        price1: "₹ 19,999",
-        price2: "₹ 24,999",
+        price1: "19,999",
+        price2: "24,999",
         dummyimg: "C:\Users\Parteek Arora\OneDrive\Desktop\Construct week\Capture.PNG",
     },
 
@@ -174,6 +177,10 @@ var earphone_display=document.getElementById('show')
 earphonedata.forEach(e => {
 
     var ear_div=document.createElement("div")
+    ear_div.addEventListener("click",function(){
+        details(e)
+window.location.href="./Details.html"
+    })
     ear_div.setAttribute("id","ear_div_scroll")
     var ear_img=document.createElement("img")
     ear_img.setAttribute("id","ear_div_scroll_img")
@@ -330,7 +337,12 @@ var headphone_display=document.getElementById('showheadphone')
 headphone.forEach(e => {
 
     var head_div=document.createElement("div")
+    head_div.addEventListener("click",function(){
+        details(e)
+window.location.href="./Details.html"
+    })
     head_div.setAttribute("id","head_div_scroll")
+
     var head_img=document.createElement("img")
     head_img.setAttribute("id","head_div_scroll_img")
     head_img.src=e.imge_url
@@ -355,4 +367,31 @@ righthead.onclick =function(){
 
 lefthead.onclick =function(){
     showheadphone.scrollLeft-=300
+}
+
+
+var lc_len
+    if(localStorage.getItem("counter")==null){
+        lc_len=0
+    }
+    else{
+        lc_len=localStorage.getItem("counter")
+    }
+
+    function increase(){
+        
+        lc_len++
+      
+        localStorage.setItem("counter",lc_len)
+        
+    }
+function tocart(value){
+    let arr=localStorage.getItem("Additemtocart")?JSON.parse(localStorage.getItem("Additemtocart")):[];
+    arr.push(value)
+    localStorage.setItem("Additemtocart",JSON.stringify(arr))
+    alert("Add to cart sucessfully")
+    
+}
+function details(mendata){
+    localStorage.setItem("indatails",JSON.stringify(mendata))
 }

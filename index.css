@@ -149,7 +149,10 @@ p{
     text-align: left;
     margin-right: +160px;
 }
-
+.text2{
+    color: white;
+    text-align: center;
+}
 h5{
     text-align: left;
 }

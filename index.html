@@ -5,18 +5,16 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>index</title>
-    <link rel="icon" type="image/x-icon" href="favicon (2).png">
     <link rel="stylesheet" href="index.css">
+    <link rel="icon" type="image/x-icon" href="favicon (2).png">
     <link rel="stylesheet" href="./navbar/navbar.css">
     <link rel="stylesheet" href="footer.css"/>
 </head>
 <body id="body">
-    <div id="navi">
-            
-
-    </div>
     <div>
-        
+        <div id="navi">
+
+        </div>
         <div class="firstSlide">
             <img src="https://cdn.shopify.com/s/files/1/0153/8863/files/HeadphoneZone_Mojo2-Banner_Desktop_2000x.jpg?v=1644831296" alt="" class="image">
             <div class="overlay">
@@ -27,7 +25,6 @@
                 </div>
             </div>
         </div>
-        
         <div>
             <h2>START YOUR AUDIOPHILE JOURNEY HERE</h2>
         </div>
@@ -391,10 +388,6 @@
                 <p>WE SUPPORT SMALL, INDEPENDENT AND LOCAL BUSINESSES AND COMMUNITIES</p>
             </div>
         </div>
-       
-    </div>
-    <div id="footer">
-
     </div>
 
     <div class="club">
@@ -505,7 +498,9 @@
     </div>
     
 
-    
+    <div id="footer">
+
+    </div>
 
 </body>
 <script type="module">
@@ -513,13 +508,8 @@
     var navi=document.getElementById("navi")
     navi.innerHTML=nav()
 
-    // import footer from "footer_cmpt.js"
-    // var footerr=document.getElementById("footer")
-  
-    // footerr.innerHTML=footerr()
-// console.log(navi.innerHTML)
 let loc_data=localStorage.getItem("headPhoneuserData")
-    // console.log(loc_data)
+    // console.log(loc_data.length)
     if(loc_data.length!=0){
         document.getElementById("login_acc").innerText="Account"
     }
@@ -530,7 +520,20 @@ let loc_data=localStorage.getItem("headPhoneuserData")
     let acc=document.getElementById("login_acc")
     if(acc.innerText="Account"){
         acc.href="aboutperosn.html"
+
     }
+    if(localStorage.getItem("Additemtocart")!=null){
+    let lc_len=localStorage.getItem("counter")
+    var lc_len_int=parseInt(lc_len)
+    console.log(typeof(lc_len_int))
+// if(lc_len)
+if(lc_len_int>0){
+    document.getElementById("cart").innerText=lc_len_int
+
+}
+}
+
+
 </script>
 
 <script type="module">

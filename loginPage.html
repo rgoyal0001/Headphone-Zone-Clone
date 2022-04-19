@@ -64,6 +64,25 @@
     // var footerr=document.getElementById("footer")
   
     // footerr.innerHTML=footerr()
+    
+    if(localStorage.getItem("Additemtocart")!=null){
+    let lc_len=localStorage.getItem("counter")
+    var lc_len_int=parseInt(lc_len)
+    console.log(typeof(lc_len_int))
+// if(lc_len)
+if(lc_len_int>0){
+    document.getElementById("cart").innerText=lc_len_int
+
+}
+}
+else{
+    document.getElementById("cart").innerText=0
+    lc_len_int=0
+    lc_len=JSON.stringify(lc_len_int)
+    localStorage.setItem("counter",lc_len)
+
+
+}
 </script>
 <script type="module">
    
@@ -93,25 +112,19 @@
         }else{
             userData.forEach(userDetails => {
                 if(userDetails.email===userEmail && userDetails.password===userPassword){
-<<<<<<< HEAD
-                    alert("loin successful");
                     
-                 
-                    document.location.href="index.html";
-                }
-                else{
-                    alert("Please eneter valid details/register first");
-                }                
-=======
+                    
                     alert("login successful");
                     isLogedIn = true;                   
                     return;
-                }              
->>>>>>> 53bbf47f9d39a8b13f865e83784e1f55d5296fe4
+                    
+                }
+               
+                          
             });
         }
         if(isLogedIn===true){    
-            document.location.href="signUpPage.html";        
+            document.location.href="index.html";        
         } else{
             alert("Please eneter valid details/register first")
         }

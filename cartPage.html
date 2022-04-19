@@ -3,8 +3,15 @@
 <head>
     <title>cart Page </title>
     <link rel="stylesheet" href="./cartPage.css">
+    <link rel="icon" type="image/x-icon" href="favicon (2).png">
+
+    <link rel="stylesheet" href="./navbar/navbar.css">
+    <link rel="stylesheet" href="footer.css"/>
 </head>
 <body>
+    <div id="navi">
+
+    </div>
     
     <div id="container">
         <div id="productDetails">
@@ -39,55 +46,74 @@
             <p style="color:grey"><a href="./loginPage.html" style="text-decoration:none;color: grey;">Login</a>  to earn 72340 Club Audiophile points.
             <br> No account?<a href="./signUpPage.html" style="text-decoration:none;color: grey"> Sign up now.</a></p>            
         </div>        
-    </div>    
+    </div>   
+    <div id="footer">
+
+    </div>
+    
 </body>
+<script type="module">
+    import nav from "./navbar.js"
+    var navi=document.getElementById("navi")
+    navi.innerHTML=nav()
+
+    // import footer from "footer_cmpt.js"
+    // var footerr=document.getElementById("footer")
+  
+    // footerr.innerHTML=footerr()
+// console.log(navi.innerHTML)
+let loc_data=localStorage.getItem("headPhoneuserData")
+    // console.log(loc_data)
+    if(loc_data.length!=0){
+        document.getElementById("login_acc").innerText="Account"
+    }
+    else{
+        document.getElementById("login_acc").innerText="Login"
+    }
+
+    let acc=document.getElementById("login_acc")
+    if(acc.innerText="Account"){
+        acc.href="aboutperosn.html"
+    }
+    
+    if(localStorage.getItem("Additemtocart")!=null){
+    let lc_len=localStorage.getItem("counter")
+    var lc_len_int=parseInt(lc_len)
+    console.log(typeof(lc_len_int))
+// if(lc_len)
+if(lc_len_int>0){
+    document.getElementById("cart").innerText=lc_len_int
+
+}
+}
+else{
+    document.getElementById("cart").innerText=0
+    lc_len_int=0
+    lc_len=JSON.stringify(lc_len_int)
+    localStorage.setItem("counter",lc_len)
+
+
+}
+</script>
+
+<script type="module">
+   
+
+    import footer from "./footer_cmpt.js"
+    var footerr=document.getElementById("footer")
+//   console.log(footer)
+    footerr.innerHTML=footer()
+</script>
+
+
+<script src="./navbar/nav_compt.js"></script>
 <script>
     window.addEventListener("load",totalAmount);
     window.addEventListener("load",productbar);
     document.querySelector("#checkoutButtone").addEventListener("click",checkoutfunction)
 
-    // var cartArr=JSON.parse(localStorage.getItem("headphoneCartItems")) || [];   
+    var cartArr=JSON.parse(localStorage.getItem("Additemtocart")) || [];   
 
-
-
-   var cartArr=[{imageUrl:"https://cdn.shopify.com/s/files/1/0153/8863/products/Headphone-Zone-KZ-EDX-Pro-crystal-01_459c4189-ee97-4c56-8b95-f9e8b1c6f00a_500x.jpg?v=1634125156",
-            productName:"1",
-            productColor:"Black",
-            originalPrice:"1299",
-        discountPrice:"99",
-    quantity:"1" },
-    {imageUrl:"https://cdn.shopify.com/s/files/1/0153/8863/products/Headphone-Zone-KZ-EDX-Pro-crystal-01_459c4189-ee97-4c56-8b95-f9e8b1c6f00a_500x.jpg?v=1634125156",
-            productName:"2",
-            productColor:"Black",
-            originalPrice:"1299",
-        discountPrice:"99",
-    quantity:"1", },{imageUrl:"https://cdn.shopify.com/s/files/1/0153/8863/products/Headphone-Zone-KZ-EDX-Pro-crystal-01_459c4189-ee97-4c56-8b95-f9e8b1c6f00a_500x.jpg?v=1634125156",
-            productName:"3",
-            productColor:"Black",
-            originalPrice:"1299",
-        discountPrice:"99",
-    quantity:"1", },{imageUrl:"https://cdn.shopify.com/s/files/1/0153/8863/products/Headphone-Zone-KZ-EDX-Pro-crystal-01_459c4189-ee97-4c56-8b95-f9e8b1c6f00a_500x.jpg?v=1634125156",
-            productName:"4",
-            productColor:"Black",
-            originalPrice:"1299",
-        discountPrice:"99",
-    quantity:"1", },{imageUrl:"https://cdn.shopify.com/s/files/1/0153/8863/products/Headphone-Zone-KZ-EDX-Pro-crystal-01_459c4189-ee97-4c56-8b95-f9e8b1c6f00a_500x.jpg?v=1634125156",
-            productName:"5",
-            productColor:"Black",
-            originalPrice:"1299",
-        discountPrice:"99",
-    quantity:"1", },{imageUrl:"https://cdn.shopify.com/s/files/1/0153/8863/products/Headphone-Zone-KZ-EDX-Pro-crystal-01_459c4189-ee97-4c56-8b95-f9e8b1c6f00a_500x.jpg?v=1634125156",
-            productName:"6",
-            productColor:"Black",
-            originalPrice:"1299",
-        discountPrice:"99",
-    quantity:"1", },{imageUrl:"https://cdn.shopify.com/s/files/1/0153/8863/products/Headphone-Zone-KZ-EDX-Pro-crystal-01_459c4189-ee97-4c56-8b95-f9e8b1c6f00a_500x.jpg?v=1634125156",
-            productName:"7",
-            productColor:"Black",
-            originalPrice:"1299",
-        discountPrice:"99",
-    quantity:"1", }
-];
 
     function productbar(){
         var total=0
@@ -99,7 +125,7 @@
            emptyCartButton.innerText="START SHOPPING";
            emptyCartButton.setAttribute("id","emptyCartButton");
            emptyCartButton.addEventListener("click",function(){
-               window.location.href="./loginpage"
+               window.location.href="./index.html"
            });
            var emptyCartDiv=document.createElement("div");
            emptyCartDiv.setAttribute("id","emptyCartDiv");
@@ -114,19 +140,19 @@
             var imageDiv=document.createElement("div");
             imageDiv.setAttribute("class","imageDiv");
             var imgUrlElement=document.createElement("img");
-            var imageUrl=element.imageUrl;
+            var imageUrl=element.imge_url;
             imgUrlElement.src=imageUrl;
             imageDiv.append(imgUrlElement);
 
             var detailsDiv=document.createElement("div");
             detailsDiv.setAttribute("class","detailsDiv");
             var productNameElement=document.createElement("h4");
-            productNameElement.innerText=element.productName;
-            var productColorElement=document.createElement("p");
-            productColorElement.innerText=element.productColor;
+            productNameElement.innerText=element.name;
+            // var productColorElement=document.createElement("p");
+            // productColorElement.innerText=element.productColor;
             var productPriceElement=document.createElement("h6");
-            productPriceElement.innerText="₹ "+element.discountPrice;
-            detailsDiv.append(productNameElement,productColorElement, productPriceElement);
+            productPriceElement.innerText="₹ "+element.price1;
+            detailsDiv.append(productNameElement, productPriceElement);
 
             var qntDiv=document.createElement("div");
             qntDiv.setAttribute("class","qntDiv");
@@ -175,14 +201,14 @@
             var totDiv=document.createElement("div");
             totDiv.setAttribute("class","totDiv");
             var discountPriceElement=document.createElement("h3");
-            discountPriceElement.innerText="₹ "+((+element.discountPrice)*(+element.quantity));
+            discountPriceElement.innerText="₹ "+((+element.price1)*(+element.quantity));
             var strike=document.createElement("s");
             // var originalPriceElement=document.createElement("h5");
-            strike.innerText="₹ "+((+element.originalPrice)*(+element.quantity));
+            strike.innerText="₹ "+((+element.price2)*(+element.quantity));
             // strike.innerText=originalPriceElement
             totDiv.append(discountPriceElement, strike);
 
-            total+=((+element.discountPrice)*(+element.quantity))
+            total+=((+element.price1)*(+element.quantity))
 
             product.append(imageDiv,detailsDiv,qntDiv,totDiv);
             
@@ -209,7 +235,7 @@
     }
 
     function totalAmount(total){              
-        document.querySelector("#totalTag").innerText=total; 
+        document.querySelector("#totalTag").innerText="₹ "+total; 
         totalUpdate(total); 
     }
     function removeItemFromCartData(index){

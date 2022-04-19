@@ -26,7 +26,7 @@
 <div id="disbody">
     <div id="lft">
         <button onclick="about()" id="profile">MY PROFILE</button>
-        <button>MY ORDERS</button>
+        <button onclick="gotocart()">MY ORDERS</button>
         <button>CLUB AUDIOPHILE REWARDS</button>
         <button>DELIVERY ADDRESS</button>
         <button>RECENTLY VIEWED PRODUCTS</button>
@@ -63,6 +63,25 @@
     if(acc.innerText="Account"){
         acc.href="aboutperosn.html"
     }
+    
+    if(localStorage.getItem("Additemtocart")!=null){
+    let lc_len=localStorage.getItem("counter")
+    var lc_len_int=parseInt(lc_len)
+    console.log(typeof(lc_len_int))
+// if(lc_len)
+if(lc_len_int>0){
+    document.getElementById("cart").innerText=lc_len_int
+
+}
+}
+else{
+    document.getElementById("cart").innerText=0
+    lc_len_int=0
+    lc_len=JSON.stringify(lc_len_int)
+    localStorage.setItem("counter",lc_len)
+
+
+}
 
 
 </script>
@@ -83,6 +102,9 @@
         document.getElementById("name_heading").innerText=`HELLO ${e.firstName}`
     });
     // about()
+    function gotocart(){
+window.location.href="cartPage.html"
+    }
 function about(){
    document.getElementById("profile").setAttribute("id","btnpress")
     //   console.log(abt)
