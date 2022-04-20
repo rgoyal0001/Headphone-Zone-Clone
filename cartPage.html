@@ -46,48 +46,48 @@
     window.addEventListener("load",productbar);
     document.querySelector("#checkoutButtone").addEventListener("click",checkoutfunction)
 
-    // var cartArr=JSON.parse(localStorage.getItem("headphoneCartItems")) || [];   
+    var cartArr=JSON.parse(localStorage.getItem("headphoneCartItems")) || [];   
 
 
 
-   var cartArr=[{imageUrl:"https://cdn.shopify.com/s/files/1/0153/8863/products/Headphone-Zone-KZ-EDX-Pro-crystal-01_459c4189-ee97-4c56-8b95-f9e8b1c6f00a_500x.jpg?v=1634125156",
-            productName:"1",
-            productColor:"Black",
-            originalPrice:"1299",
-        discountPrice:"99",
-    quantity:"1" },
-    {imageUrl:"https://cdn.shopify.com/s/files/1/0153/8863/products/Headphone-Zone-KZ-EDX-Pro-crystal-01_459c4189-ee97-4c56-8b95-f9e8b1c6f00a_500x.jpg?v=1634125156",
-            productName:"2",
-            productColor:"Black",
-            originalPrice:"1299",
-        discountPrice:"99",
-    quantity:"1", },{imageUrl:"https://cdn.shopify.com/s/files/1/0153/8863/products/Headphone-Zone-KZ-EDX-Pro-crystal-01_459c4189-ee97-4c56-8b95-f9e8b1c6f00a_500x.jpg?v=1634125156",
-            productName:"3",
-            productColor:"Black",
-            originalPrice:"1299",
-        discountPrice:"99",
-    quantity:"1", },{imageUrl:"https://cdn.shopify.com/s/files/1/0153/8863/products/Headphone-Zone-KZ-EDX-Pro-crystal-01_459c4189-ee97-4c56-8b95-f9e8b1c6f00a_500x.jpg?v=1634125156",
-            productName:"4",
-            productColor:"Black",
-            originalPrice:"1299",
-        discountPrice:"99",
-    quantity:"1", },{imageUrl:"https://cdn.shopify.com/s/files/1/0153/8863/products/Headphone-Zone-KZ-EDX-Pro-crystal-01_459c4189-ee97-4c56-8b95-f9e8b1c6f00a_500x.jpg?v=1634125156",
-            productName:"5",
-            productColor:"Black",
-            originalPrice:"1299",
-        discountPrice:"99",
-    quantity:"1", },{imageUrl:"https://cdn.shopify.com/s/files/1/0153/8863/products/Headphone-Zone-KZ-EDX-Pro-crystal-01_459c4189-ee97-4c56-8b95-f9e8b1c6f00a_500x.jpg?v=1634125156",
-            productName:"6",
-            productColor:"Black",
-            originalPrice:"1299",
-        discountPrice:"99",
-    quantity:"1", },{imageUrl:"https://cdn.shopify.com/s/files/1/0153/8863/products/Headphone-Zone-KZ-EDX-Pro-crystal-01_459c4189-ee97-4c56-8b95-f9e8b1c6f00a_500x.jpg?v=1634125156",
-            productName:"7",
-            productColor:"Black",
-            originalPrice:"1299",
-        discountPrice:"99",
-    quantity:"1", }
-];
+//    var cartArr=[{imageUrl:"https://cdn.shopify.com/s/files/1/0153/8863/products/Headphone-Zone-KZ-EDX-Pro-crystal-01_459c4189-ee97-4c56-8b95-f9e8b1c6f00a_500x.jpg?v=1634125156",
+//             productName:"1",
+//             productColor:"Black",
+//             originalPrice:"1299",
+//         discountPrice:"99",
+//     quantity:"1" },
+//     {imageUrl:"https://cdn.shopify.com/s/files/1/0153/8863/products/Headphone-Zone-KZ-EDX-Pro-crystal-01_459c4189-ee97-4c56-8b95-f9e8b1c6f00a_500x.jpg?v=1634125156",
+//             productName:"2",
+//             productColor:"Black",
+//             originalPrice:"1299",
+//         discountPrice:"99",
+//     quantity:"1", },{imageUrl:"https://cdn.shopify.com/s/files/1/0153/8863/products/Headphone-Zone-KZ-EDX-Pro-crystal-01_459c4189-ee97-4c56-8b95-f9e8b1c6f00a_500x.jpg?v=1634125156",
+//             productName:"3",
+//             productColor:"Black",
+//             originalPrice:"1299",
+//         discountPrice:"99",
+//     quantity:"1", },{imageUrl:"https://cdn.shopify.com/s/files/1/0153/8863/products/Headphone-Zone-KZ-EDX-Pro-crystal-01_459c4189-ee97-4c56-8b95-f9e8b1c6f00a_500x.jpg?v=1634125156",
+//             productName:"4",
+//             productColor:"Black",
+//             originalPrice:"1299",
+//         discountPrice:"99",
+//     quantity:"1", },{imageUrl:"https://cdn.shopify.com/s/files/1/0153/8863/products/Headphone-Zone-KZ-EDX-Pro-crystal-01_459c4189-ee97-4c56-8b95-f9e8b1c6f00a_500x.jpg?v=1634125156",
+//             productName:"5",
+//             productColor:"Black",
+//             originalPrice:"1299",
+//         discountPrice:"99",
+//     quantity:"1", },{imageUrl:"https://cdn.shopify.com/s/files/1/0153/8863/products/Headphone-Zone-KZ-EDX-Pro-crystal-01_459c4189-ee97-4c56-8b95-f9e8b1c6f00a_500x.jpg?v=1634125156",
+//             productName:"6",
+//             productColor:"Black",
+//             originalPrice:"1299",
+//         discountPrice:"99",
+//     quantity:"1", },{imageUrl:"https://cdn.shopify.com/s/files/1/0153/8863/products/Headphone-Zone-KZ-EDX-Pro-crystal-01_459c4189-ee97-4c56-8b95-f9e8b1c6f00a_500x.jpg?v=1634125156",
+//             productName:"7",
+//             productColor:"Black",
+//             originalPrice:"1299",
+//         discountPrice:"99",
+//     quantity:"1", }
+// ];
 
     function productbar(){
         var total=0
@@ -165,7 +165,7 @@
             remove.setAttribute("id","removeButton")
             qntDiv.append(qntAddDiv,remove);
             remove.addEventListener("click",function(){
-                alert("Item removed from the Cart");
+                
                 removeItemFromCartData(i);  
                                 
             })
@@ -212,10 +212,13 @@
         totalUpdate(total); 
     }
     function removeItemFromCartData(index){
+        console.log(index,"Function called");
+        console.log(cartArr);
         cartArr.splice(index,1);
-        localStorage.setItem("headphoneCartItems",JSON.stringify(cartArr));
+        console.log(cartArr);
+       localStorage.setItem("headphoneCartItems",JSON.stringify(cartArr));
         window.location.reload();
-        return;     
+        // return;     
     }
 </script>
 </html>
